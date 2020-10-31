@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:restMockAction name="search" method="GET" resourcePath="/search" id="726d9607-d507-4c87-930f-ed674247a767" xmlns:con="http://eviware.com/soapui/config">
-      <con:settings>
-        <con:setting id="92956b11-db13-4f2a-90f3-f11bc6a1950bfileName">search</con:setting>
-      <con:setting id="726d9607-d507-4c87-930f-ed674247a767fileName">search</con:setting></con:settings>
-      <con:defaultResponse>Search Response</con:defaultResponse>
-      <con:dispatchStyle>SCRIPT</con:dispatchStyle>
-      <con:dispatchConfig/>
-      <con:dispatchPath>import java.net.URLDecoder;
+<con:restMockAction id="726d9607-d507-4c87-930f-ed674247a767" method="GET" name="search" resourcePath="/search" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="92956b11-db13-4f2a-90f3-f11bc6a1950bfileName">search</con:setting>
+    <con:setting id="726d9607-d507-4c87-930f-ed674247a767fileName">search</con:setting>
+  </con:settings>
+  <con:defaultResponse>Search Response</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>import java.net.URLDecoder;
 def queryString = mockRequest.getRequest().getQueryString()
 
 String[] fields = queryString.split("&amp;");
@@ -45,12 +46,12 @@ return "Unknown Response"
 
 
 return "Search Response"</con:dispatchPath>
-      <con:dispatchXPath/>
-      <con:parameterDispatcherRuleContainer/>
-      <con:routeScript/>
-      <con:response name="Search Response" id="41e68c78-6373-4c24-aaf9-80d73863f033" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response dataSource="" httpResponseStatus="200" id="41e68c78-6373-4c24-aaf9-80d73863f033" mediaType="application/json" name="Search Response">
+    <con:settings/>
+    <con:responseContent>{
   "result": {
     "item": [
       {
@@ -81,14 +82,14 @@ return "Search Response"</con:dispatchPath>
     ]
   }
 }</con:responseContent>
-      </con:response>
-      <con:response name="Invalid Session Id Fault" id="a0e3d208-12e2-4cc8-af24-bd1b7e9777be" httpResponseStatus="200" dataSource="">
-        <con:settings/>
-        <con:responseContent>{"Failed" : "Invalid Session Id"}</con:responseContent>
-      </con:response>
-      <con:response name="Item 1 Response" id="839b1eb8-84cb-4eb0-b460-fc9314814277" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="a0e3d208-12e2-4cc8-af24-bd1b7e9777be" name="Invalid Session Id Fault">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Invalid Session Id"}</con:responseContent>
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="839b1eb8-84cb-4eb0-b460-fc9314814277" mediaType="application/json" name="Item 1 Response">
+    <con:settings/>
+    <con:responseContent>{
   "result": {
     "item": {
       "id": "Item 1",
@@ -97,10 +98,10 @@ return "Search Response"</con:dispatchPath>
     }
   }
 }</con:responseContent>
-      </con:response>
-      <con:response name="Item 2 Response" id="39d62289-cea0-47b5-ad53-def905c06b2a" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="39d62289-cea0-47b5-ad53-def905c06b2a" mediaType="application/json" name="Item 2 Response">
+    <con:settings/>
+    <con:responseContent>{
   "result": {
     "item": {
       "id": "Item 2",
@@ -109,10 +110,10 @@ return "Search Response"</con:dispatchPath>
     }
   }
 }</con:responseContent>
-      </con:response>
-      <con:response name="Item 3 Response" id="1e1dbe4e-6c31-44df-b320-cb413dd95c48" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="1e1dbe4e-6c31-44df-b320-cb413dd95c48" mediaType="application/json" name="Item 3 Response">
+    <con:settings/>
+    <con:responseContent>{
   "result": {
     "item": {
       "id": "Item 3",
@@ -121,10 +122,10 @@ return "Search Response"</con:dispatchPath>
     }
   }
 }</con:responseContent>
-      </con:response>
-      <con:response name="Item 4 Response" id="d87ce05c-0341-4bd3-95c5-6de65f20f304" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="d87ce05c-0341-4bd3-95c5-6de65f20f304" mediaType="application/json" name="Item 4 Response">
+    <con:settings/>
+    <con:responseContent>{
   "result": {
     "item": {
       "id": "Item 4",
@@ -133,10 +134,10 @@ return "Search Response"</con:dispatchPath>
     }
   }
 }</con:responseContent>
-      </con:response>
-      <con:response name="Item 5 Response" id="077ff1f8-4aa9-4c8b-80cd-d71c50b9f3ab" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="077ff1f8-4aa9-4c8b-80cd-d71c50b9f3ab" mediaType="application/json" name="Item 5 Response">
+    <con:settings/>
+    <con:responseContent>{
   "result": {
     "item": {
       "id": "Item 5",
@@ -145,18 +146,18 @@ return "Search Response"</con:dispatchPath>
     }
   }
 }</con:responseContent>
-      </con:response>
-      <con:response name="Search Fault Response" id="152c6680-6b2a-4be6-8462-f8b59e600d07" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{"No Result" : "The search returned no items"}</con:responseContent>
-      </con:response>
-      <con:response name="Unknown Response" id="b106d12c-2a28-4e2b-a31b-6fc69c392554" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{ "Client" : "Unknown Search String" }</con:responseContent>
-      </con:response>
-      <con:response name="WildCard Response" id="0ce69a22-569f-4b65-bc61-819b91368da4" httpResponseStatus="200" mediaType="application/json" dataSource="">
-        <con:settings/>
-        <con:responseContent>{
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="152c6680-6b2a-4be6-8462-f8b59e600d07" mediaType="application/json" name="Search Fault Response">
+    <con:settings/>
+    <con:responseContent>{"No Result" : "The search returned no items"}</con:responseContent>
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="b106d12c-2a28-4e2b-a31b-6fc69c392554" mediaType="application/json" name="Unknown Response">
+    <con:settings/>
+    <con:responseContent>{ "Client" : "Unknown Search String" }</con:responseContent>
+  </con:response>
+  <con:response dataSource="" httpResponseStatus="200" id="0ce69a22-569f-4b65-bc61-819b91368da4" mediaType="application/json" name="WildCard Response">
+    <con:settings/>
+    <con:responseContent>{
   "result": {
     "item": [
       {
@@ -187,5 +188,5 @@ return "Search Response"</con:dispatchPath>
     ]
   }
 }</con:responseContent>
-      </con:response>
-    </con:restMockAction>
+  </con:response>
+</con:restMockAction>
