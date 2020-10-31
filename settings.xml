@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project activeEnvironment="Default environment" compositeProjectFormat="1.3" created="2.7.0" encryptionMode="Not encrypted" id="333b3b92-bc99-4628-afcb-90672b2992ea" name="REST Sample Project" resourceRoot="" updated="3.4.5" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project abortOnError="false" activeEnvironment="Default environment" compositeProjectFormat="1.3" created="2.7.0" encryptionMode="Not encrypted" id="333b3b92-bc99-4628-afcb-90672b2992ea" name="REST Sample Project" resourceRoot="" runType="SEQUENTIAL" updated="3.4.5" xmlns:con="http://eviware.com/soapui/config">
   <con:description>Sample Projects bases on a virtualized REST service. Please make sure that port 8084 is available on your local machine or you can update the virtual API under the serviceV tool to reflect an open port on your system. You will also have to update the ports on the tests to reflect
 the same ports on the virtual service.</con:description>
   <con:settings>

@@ -7,7 +7,7 @@
     <con:settings/>
     <con:config>
       <script>testing vm 3
-local</script>
+local 3</script>
     </con:config>
   </con:testStep>
   <con:properties/>
