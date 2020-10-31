@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource id="75364f33-cf4b-4a2b-b339-32f81cd19471" name="buy" path="/buy" xmlns:con="http://eviware.com/soapui/config">
+<con:resource id="75364f33-cf4b-4a2b-b339-32f81cd19471" name="buy" path="/buy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="d2e78192-32e5-44ea-b917-4dccd7c6470bfileName">buy</con:setting>
     <con:setting id="75364f33-cf4b-4a2b-b339-32f81cd19471fileName">buy</con:setting>
