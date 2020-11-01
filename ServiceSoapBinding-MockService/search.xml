@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="search" interface="ServiceSoapBinding" operation="search" id="edb20425-20fd-421a-855e-2cb249841799" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="edb20425-20fd-421a-855e-2cb249841799fileName">search</con:setting>
+  </con:settings>
+  <con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+                def holder = groovyUtils.getXmlHolder( mockRequest.requestContent )
+
+                def sessionid = holder.getNodeValue( "//sessionid" )
+
+                // check
+                if( !context.hasProperty(sessionid))
+                return "Invalid Session Id Fault"
+
+                def searchstring = holder.getNodeValue( "//searchstring" )
+
+               if (searchstring == "all")
+                return "WildCard Response"
+                else if (searchstring == "Item 1")
+                return "Item 1 Response"
+                else if (searchstring == "Item 2")
+                return "Item 2 Response"
+                else if (searchstring == "Item 3")
+                return "Item 3 Response"
+                else if (searchstring == "Item 4")
+                return "Item 3 Response"
+                else if (searchstring == "Item 5")
+                return "Item 5 Response"
+                else
+                return "Unknown Response"
+
+
+                return "Search Response"</con:dispatchPath>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:defaultResponse>Search Response</con:defaultResponse>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Search Response" encoding="UTF-8" httpResponseStatus="200" id="6961ab26-5c33-48ff-9c53-d2d675550bf9" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:searchResponse>
+ <sam:searchResponseContent>
+ <item>
+ <id>1</id>
+ <description>One handy protocol droid.</description>
+ <price>1</price>
+ </item>
+ <item>
+ <id>2</id>
+ <description>Item nr 2</description>
+ <price>2</price>
+ </item>
+ <item>
+ <id>3</id>
+ <description>Item nr 3</description>
+ <price>3</price>
+ </item>
+ <item>
+ <id>4</id>
+ <description>${item4description}</description>
+ <price>4</price>
+ </item>
+ <item>
+ <id>5</id>
+ <description>Item nr 5</description>
+ <price>5</price>
+ </item>
+ </sam:searchResponseContent>
+ </sam:searchResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Invalid Session Id Fault" encoding="UTF-8" httpResponseStatus="200" id="37e3afa8-4549-4dc2-9f2b-609dd1eb4402" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+ <soapenv:Body>
+ <soapenv:Fault>
+ <faultcode>Client</faultcode>
+ <faultstring>Invalid Session Id</faultstring>
+ </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 1 Response" encoding="UTF-8" httpResponseStatus="200" id="3cb336f6-51dc-4c3a-8eee-38816a4acade" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ 	 <sam:searchResponse>
+ <sam:searchResponseContent>
+ <item>
+ <id>Item 1</id>
+ <description>One handy protocol droid. This droid is fluent 
+		in over six million forms of communication and has a lovely golden color. 
+		Built by an enthusiast. Mindwiped only once. Can be carried on your back.</description>
+ <price>1</price>
+ </item>
+ </sam:searchResponseContent>
+		</sam:searchResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 2 Response" encoding="UTF-8" httpResponseStatus="200" id="9484f267-fcfe-4f23-bbff-9033c6a39751" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+	 <sam:searchResponse>
+ <sam:searchResponseContent>
+ <item>
+ <id>Item 2</id>
+ <description>Box of chocolate with several popular items. Covered in Glucose.
+		Recommended safety distance when eating Spring Surprise, 10 feet.</description>
+ <price>1.99</price>
+ </item>
+ </sam:searchResponseContent>
+	 </sam:searchResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 3 Response" encoding="UTF-8" httpResponseStatus="200" id="b1cb8e0b-9def-432e-af62-54d8296b2256" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+	 <sam:searchResponse>
+ <sam:searchResponseContent>
+ <item>
+ <id>Item 3</id>
+ <description>One towel. Massively useful thing. 
+Impress the strags with this amazing cloth!</description>
+ <price>2.99</price>
+ </item>
+ </sam:searchResponseContent>
+	 </sam:searchResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 4 Response" encoding="UTF-8" httpResponseStatus="200" id="46c01ed8-bf8e-4bb0-bf12-11f38e7253db" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+	 <sam:searchResponse>
+ <sam:searchResponseContent>
+ <item>
+ <id>item 4</id>
+ <description>Ono-Sendai 7. The newest cowboy tech from Hosaka. 
+		Break the ICE with this conversation piece.</description>
+ <price>4.99</price>
+ </item>
+ </sam:searchResponseContent>
+ </sam:searchResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Item 5 Response" encoding="UTF-8" httpResponseStatus="200" id="b56e9bb9-a985-4865-adaf-054044f4dc68" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+	 <sam:searchResponse>
+ <sam:searchResponseContent>
+ <item>
+ <id>item 5</id>
+ <description>soapui Pro 1.7.5. Necessary when testing Web Services.</description>
+ <price>349</price>
+ </item>
+ <sam:searchResponseContent>
+ </sam:searchResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Search Fault Response" encoding="UTF-8" httpResponseStatus="200" id="6995b7aa-304a-4944-82f4-4eee17bbd0ec" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <soapenv:Fault>
+ <faultcode>Server</faultcode>
+ <faultstring>No Result</faultstring>
+ <detail>
+ <sam:loginFault>The search returned no items</sam:loginFault>
+ </detail>
+ </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Unknown Response" encoding="UTF-8" httpResponseStatus="200" id="60001af0-f0e4-4f41-9850-259c3b8ea6cd" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+ <soapenv:Body>
+ <soapenv:Fault>
+ <faultcode>Client</faultcode>
+ <faultstring>Unknown Search String</faultstring>
+ </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="WildCard Response" encoding="UTF-8" httpResponseStatus="200" id="830730f2-8a85-4dee-81ca-29577c2ecd4e" dataSource="">
+    <con:settings/>
+    <con:script>context.item4description = Math.random() > 0.9 ? "garbage" : "Item nr 4"</con:script>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:searchResponse>
+ <sam:searchResponseContent>
+ <item>
+ <id>Item 1</id>
+ <description>One handy protocol droid. This droid is fluent 
+		in over six million forms of communication and has a lovely golden color. 
+		Built by an enthusiast. Mindwiped only once. Can be carried on your back.</description>
+ <price>1</price>
+ </item>
+ <item>
+ <id>Item 2</id>
+ <description>Box of chocolate with several popular items. Covered in Glucose.
+		Recommended safety distance when eating Spring Surprise, 10 feet.</description>
+ <price>1.99</price>
+ </item>
+ <item>
+ <id>Item 3</id>
+ <description>One towel. Massively useful thing. 
+Impress the strags with this amazing cloth!</description>
+ <price>2.99</price>
+ </item>
+ <item>
+ <id>Item 4</id>
+ <description>Ono-Sendai 7. The newest cowboy tech from Hosaka. 
+		Break the ICE with this conversation piece.</description>
+ <price>4.99</price>
+ </item>
+ <item>
+ <id>Item 5</id>
+ <description>soapui Pro 1.7.5. Necessary when testing Web Services.</description>
+ <price>349</price>
+ </item>
+ </sam:searchResponseContent>
+ </sam:searchResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:dispatchConfig/>
+</con:mockOperation>

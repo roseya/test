@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase - Searching after Logging out LoadTests" searchProperties="true" maxResults="0" id="fc3cfb74-e41f-4a86-9308-2be383633755" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Here is an interesting TestCase.
+
+                The actual TestCase itself is not that interesting, but we've used it in order to test how the Web
+                Service handles load.
+
+                AND...
+
+                The second LoadTest "LoadTest with Multiple Tests (will fail)" DOES fail. Why does it fail and not the
+                first?
+                This is because in the first test we have just one simple thread and in the second we have a whopping
+                ten.
+
+                What have we achieved?
+                Our Web Service is not thread safe!
+                Bug Found!</con:description>
+  <con:settings>
+    <con:setting id="fc3cfb74-e41f-4a86-9308-2be383633755fileName">TestCase---Searching-after-Logging-out-LoadTests</con:setting>
+  </con:settings>
+  <con:testStep type="VirtRunnerTestStep" name="Start Virt Service" id="0bd561b2-d27f-4f89-95f1-4d69fe9d128b">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>run</action>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - Login" id="2b4e3762-2007-464e-ba00-cda1979148c8">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - Login" outgoingWss="" incomingWss="" id="bcf65322-527c-46e0-9714-982a8e2c10ee" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Login${=String.valueOf(Math.random()).substring( 0, 5 )}</username>
+ <password>Login123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="352553d8-424f-41bd-80e5-eff3b77fc069"/>
+        <con:assertion type="Schema Compliance" id="7c69bb0d-9df2-4031-b2a4-877398a38b5f">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="SOAP Fault Assertion" id="6faaa04b-e422-4dd3-a960-50413ba245d2"/>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - logout" id="205d2078-d1fe-48da-a550-9681c3e35e86">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>logout</con:operation>
+      <con:request name="Test Request - logout" outgoingWss="" incomingWss="" id="4dd613d3-e982-42ad-a8e0-3fdd59241996" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:logout>
+ <sessionid>${Test Request - Login#Response#//sam:loginResponse/sessionid}</sessionid>
+ </sam:logout>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="85d7762c-ca24-4e26-b16b-e56e48a33b2e"/>
+        <con:assertion type="Schema Compliance" id="74847d5a-b182-4141-bc6b-7457d66166f3">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="XPath Match" id="be9c2560-2afb-4b60-a7a5-2e9b6abbfd20">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+                                    //sam:logoutResponse/sessioninfo</path>
+            <content>OK</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - Correct Search after Logout" id="ae3e9cbb-c357-4498-b20f-b691306a3da9">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>search</con:operation>
+      <con:request name="Test Request - Correct Search after Logout" outgoingWss="" incomingWss="" id="0c266f5a-7433-40c7-aad4-963386837424" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:search>
+ <sessionid>${Test Request - Login#Response#//sam:loginResponse/sessionid}</sessionid>
+ <searchstring>Item 4</searchstring>
+ </sam:search>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="e027ba2a-271f-4b51-a8f5-363045fc13a4"/>
+        <con:assertion type="Schema Compliance" name="Schema Compliance" id="ad5cf600-b1a0-48d5-9e11-35723357d8fe">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="Not SOAP Fault Assertion" id="cb57023b-1c48-40bd-aa68-861438e15835"/>
+        <con:assertion type="XPath Match" id="7f560be8-61ca-496d-9582-fc0ad8c04e0a">
+          <con:configuration>
+            <path>//faultstring</path>
+            <content>Invalid Session Id</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="VirtRunnerTestStep" name="Stop Virt Service" id="5cced839-5211-4e56-9db8-26832a2cdd13">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>stop</action>
+    </con:config>
+  </con:testStep>
+  <con:loadTest name="LoadTest" id="f5da2c59-89fd-45a2-b543-21d653c992bc">
+    <con:settings>
+      <con:setting id="HttpSettings@close-connections">false</con:setting>
+      <con:setting id="hasBeenConvertedToLoadUITest">true</con:setting>
+    </con:settings>
+    <con:threadCount>1</con:threadCount>
+    <con:startDelay>0</con:startDelay>
+    <con:sampleInterval>250</con:sampleInterval>
+    <con:calculateTPSOnTimePassed>false</con:calculateTPSOnTimePassed>
+    <con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+    <con:historyLimit>-1</con:historyLimit>
+    <con:testLimit>60</con:testLimit>
+    <con:limitType>TIME</con:limitType>
+    <con:loadStrategy>
+      <con:type>Simple</con:type>
+    </con:loadStrategy>
+    <con:assertion type="Step Status" name="Step Status"/>
+    <con:maxAssertionErrors>100</con:maxAssertionErrors>
+    <con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+    <con:strategyInterval>500</con:strategyInterval>
+    <con:reportParameters/>
+  </con:loadTest>
+  <con:loadTest name="LoadTest with Multiple Tests (will fail)" id="aec1683a-1e1f-47ae-96ef-5689adc5a81b">
+    <con:settings>
+      <con:setting id="HttpSettings@close-connections">false</con:setting>
+      <con:setting id="hasBeenConvertedToLoadUITest">true</con:setting>
+    </con:settings>
+    <con:threadCount>10</con:threadCount>
+    <con:startDelay>0</con:startDelay>
+    <con:sampleInterval>250</con:sampleInterval>
+    <con:calculateTPSOnTimePassed>false</con:calculateTPSOnTimePassed>
+    <con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+    <con:historyLimit>-1</con:historyLimit>
+    <con:testLimit>60</con:testLimit>
+    <con:limitType>TIME</con:limitType>
+    <con:loadStrategy>
+      <con:type>Simple</con:type>
+    </con:loadStrategy>
+    <con:assertion type="Step Status" name="Step Status"/>
+    <con:assertion type="Max Errors" name="After 30 errors, stop">
+      <con:configuration>
+        <name>After 30 errors, stop</name>
+        <max-absolute-errors>30</max-absolute-errors>
+        <max-relative-errors>0.0</max-relative-errors>
+        <test-step>- Any -</test-step>
+      </con:configuration>
+    </con:assertion>
+    <con:maxAssertionErrors>100</con:maxAssertionErrors>
+    <con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+    <con:strategyInterval>500</con:strategyInterval>
+    <con:reportParameters/>
+  </con:loadTest>
+  <con:properties>
+    <con:property>
+      <con:name>URL</con:name>
+      <con:value/>
+    </con:property>
+  </con:properties>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>0bd561b2-d27f-4f89-95f1-4d69fe9d128b</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

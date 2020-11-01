@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:loadUiTest name="LoadTest with Multiple Tests (will fail)" id="a18f3247-6d60-4584-aebb-472642b78842" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="soapUIObjectSourceId">fc3cfb74-e41f-4a86-9308-2be383633755</con:setting>
+    <con:setting id="convertedFromLoadTestModelItemId">aec1683a-1e1f-47ae-96ef-5689adc5a81b</con:setting>
+    <con:setting id="a18f3247-6d60-4584-aebb-472642b78842fileName">LoadTest-with-Multiple-Tests-%28will-fail%29</con:setting>
+  </con:settings>
+  <con1:loadui-project id="08dd4a3e-1bf3-4f79-b12b-6cfa628afe5c" label="LoadTest with Multiple Tests (will fail)" xmlns:con1="http://eviware.com/loadui/config">
+    <con1:properties>
+      <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+      <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
+      <con1:property propagates="true" key="ModelItem.saveReport" type="java.lang.Boolean">false</con1:property>
+      <con1:property propagates="true" key="ModelItem.reportFolder" type="java.lang.String"/>
+      <con1:property propagates="true" key="ModelItem.reportFormat" type="java.lang.String"/>
+      <con1:property propagates="true" key="Temporary project" type="java.lang.String"/>
+      <con1:property propagates="true" key="ModelItem.rate" type="java.lang.Long">10</con1:property>
+      <con1:property propagates="true" key="ModelItem.loadDistributionType" type="com.smartbear.load.facade.LoadDistributionType">PerScenario</con1:property>
+      <con1:property propagates="true" key="ModelItem.remoteMode" type="java.lang.String"/>
+    </con1:properties>
+    <con1:attributes>
+      <con1:property key="limits">Time=60;</con1:property>
+    </con1:attributes>
+    <con1:addons/>
+    <con1:scene label="New Scenario" id="44409020-2538-475c-a21d-decc5ebb9221" version="28">
+      <con1:properties>
+        <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+        <con1:property propagates="true" key="CanvasItem.abortOnFinish" type="java.lang.Boolean">false</con1:property>
+        <con1:property propagates="true" key="SceneItem.followProject" type="java.lang.Boolean">true</con1:property>
+        <con1:property propagates="true" key="SceneItem.scenarioRatePercentage" type="java.lang.Long">100</con1:property>
+        <con1:property propagates="true" key="SceneItem.scenarioRateSpecific" type="java.lang.Long">10</con1:property>
+      </con1:properties>
+      <con1:attributes>
+        <con1:property key="limits">Time=60;</con1:property>
+      </con1:attributes>
+      <con1:addons>
+        <con1:addon type="com.eviware.loadui.api.assertion.AssertionAddon" id="47ff7419-de20-4b15-9582-cb38ca5eb2f6">
+          <con1:attributes>
+            <con1:property key="parentId">95aad6ed-90b6-4692-a42f-af6350d902b5</con1:property>
+            <con1:property key="valueReference">rO0ABXNyADdjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5zZXJpYWxpemF0aW9uLlN0YXRpc3RpY1Jlc29sdmVyJwTr+w+xV3ECAARMAA1ob2xkZXJBZGRyZXNzdAASTGphdmEvbGFuZy9TdHJpbmc7TAAGc291cmNlcQB+AAFMAA1zdGF0aXN0aWNOYW1lcQB+AAFMAAx2YXJpYWJsZU5hbWVxAH4AAXhwdAAkOTVhYWQ2ZWQtOTBiNi00NjkyLWE0MmYtYWY2MzUwZDkwMmI1dAAEbWFpbnQABVRPVEFMdAAaU3RhcnQgVmlydCBTZXJ2aWNlOiBGYWlsZWQ=</con1:property>
+            <con1:property key="Labeled@label">After 30 errors, stop</con1:property>
+            <con1:property key="constraint">rO0ABXNyADFjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5hc3NlcnRpb24uUmFuZ2VDb25zdHJhaW50Y94NW62dOawCAAJEAANtYXhEAANtaW54cEA+AAAAAAAAAAAAAAAAAAA=</con1:property>
+            <con1:property key="tolerancePeriod">0</con1:property>
+            <con1:property key="toleranceAllowedOccurrences">0</con1:property>
+            <con1:property key="stopTestOnFailure">true</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:addon>
+        <con1:addon type="com.eviware.loadui.api.assertion.AssertionAddon" id="f437fb28-26a5-4a9c-9560-a3ffadbf3a98">
+          <con1:attributes>
+            <con1:property key="parentId">95aad6ed-90b6-4692-a42f-af6350d902b5</con1:property>
+            <con1:property key="valueReference">rO0ABXNyADdjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5zZXJpYWxpemF0aW9uLlN0YXRpc3RpY1Jlc29sdmVyJwTr+w+xV3ECAARMAA1ob2xkZXJBZGRyZXNzdAASTGphdmEvbGFuZy9TdHJpbmc7TAAGc291cmNlcQB+AAFMAA1zdGF0aXN0aWNOYW1lcQB+AAFMAAx2YXJpYWJsZU5hbWVxAH4AAXhwdAAkOTVhYWQ2ZWQtOTBiNi00NjkyLWE0MmYtYWY2MzUwZDkwMmI1dAAEbWFpbnQABVRPVEFMdAAcVGVzdCBSZXF1ZXN0IC0gTG9naW46IEZhaWxlZA==</con1:property>
+            <con1:property key="Labeled@label">After 30 errors, stop</con1:property>
+            <con1:property key="constraint">rO0ABXNyADFjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5hc3NlcnRpb24uUmFuZ2VDb25zdHJhaW50Y94NW62dOawCAAJEAANtYXhEAANtaW54cEA+AAAAAAAAAAAAAAAAAAA=</con1:property>
+            <con1:property key="tolerancePeriod">0</con1:property>
+            <con1:property key="toleranceAllowedOccurrences">0</con1:property>
+            <con1:property key="stopTestOnFailure">true</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:addon>
+        <con1:addon type="com.eviware.loadui.api.assertion.AssertionAddon" id="96521057-3c6e-48a1-b4fd-41a7166c04d6">
+          <con1:attributes>
+            <con1:property key="parentId">95aad6ed-90b6-4692-a42f-af6350d902b5</con1:property>
+            <con1:property key="valueReference">rO0ABXNyADdjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5zZXJpYWxpemF0aW9uLlN0YXRpc3RpY1Jlc29sdmVyJwTr+w+xV3ECAARMAA1ob2xkZXJBZGRyZXNzdAASTGphdmEvbGFuZy9TdHJpbmc7TAAGc291cmNlcQB+AAFMAA1zdGF0aXN0aWNOYW1lcQB+AAFMAAx2YXJpYWJsZU5hbWVxAH4AAXhwdAAkOTVhYWQ2ZWQtOTBiNi00NjkyLWE0MmYtYWY2MzUwZDkwMmI1dAAEbWFpbnQABVRPVEFMdAAdVGVzdCBSZXF1ZXN0IC0gbG9nb3V0OiBGYWlsZWQ=</con1:property>
+            <con1:property key="Labeled@label">After 30 errors, stop</con1:property>
+            <con1:property key="constraint">rO0ABXNyADFjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5hc3NlcnRpb24uUmFuZ2VDb25zdHJhaW50Y94NW62dOawCAAJEAANtYXhEAANtaW54cEA+AAAAAAAAAAAAAAAAAAA=</con1:property>
+            <con1:property key="tolerancePeriod">0</con1:property>
+            <con1:property key="toleranceAllowedOccurrences">0</con1:property>
+            <con1:property key="stopTestOnFailure">true</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:addon>
+        <con1:addon type="com.eviware.loadui.api.assertion.AssertionAddon" id="c27ddce7-ba7e-41f1-aea4-08b8e0bbcec9">
+          <con1:attributes>
+            <con1:property key="parentId">95aad6ed-90b6-4692-a42f-af6350d902b5</con1:property>
+            <con1:property key="valueReference">rO0ABXNyADdjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5zZXJpYWxpemF0aW9uLlN0YXRpc3RpY1Jlc29sdmVyJwTr+w+xV3ECAARMAA1ob2xkZXJBZGRyZXNzdAASTGphdmEvbGFuZy9TdHJpbmc7TAAGc291cmNlcQB+AAFMAA1zdGF0aXN0aWNOYW1lcQB+AAFMAAx2YXJpYWJsZU5hbWVxAH4AAXhwdAAkOTVhYWQ2ZWQtOTBiNi00NjkyLWE0MmYtYWY2MzUwZDkwMmI1dAAEbWFpbnQABVRPVEFMdAAyVGVzdCBSZXF1ZXN0IC0gQ29ycmVjdCBTZWFyY2ggYWZ0ZXIgTG9nb3V0OiBGYWlsZWQ=</con1:property>
+            <con1:property key="Labeled@label">After 30 errors, stop</con1:property>
+            <con1:property key="constraint">rO0ABXNyADFjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5hc3NlcnRpb24uUmFuZ2VDb25zdHJhaW50Y94NW62dOawCAAJEAANtYXhEAANtaW54cEA+AAAAAAAAAAAAAAAAAAA=</con1:property>
+            <con1:property key="tolerancePeriod">0</con1:property>
+            <con1:property key="toleranceAllowedOccurrences">0</con1:property>
+            <con1:property key="stopTestOnFailure">true</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:addon>
+        <con1:addon type="com.eviware.loadui.api.assertion.AssertionAddon" id="b8c8d423-8fab-42ac-902c-4fe69060eb36">
+          <con1:attributes>
+            <con1:property key="parentId">95aad6ed-90b6-4692-a42f-af6350d902b5</con1:property>
+            <con1:property key="valueReference">rO0ABXNyADdjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5zZXJpYWxpemF0aW9uLlN0YXRpc3RpY1Jlc29sdmVyJwTr+w+xV3ECAARMAA1ob2xkZXJBZGRyZXNzdAASTGphdmEvbGFuZy9TdHJpbmc7TAAGc291cmNlcQB+AAFMAA1zdGF0aXN0aWNOYW1lcQB+AAFMAAx2YXJpYWJsZU5hbWVxAH4AAXhwdAAkOTVhYWQ2ZWQtOTBiNi00NjkyLWE0MmYtYWY2MzUwZDkwMmI1dAAEbWFpbnQABVRPVEFMdAAZU3RvcCBWaXJ0IFNlcnZpY2U6IEZhaWxlZA==</con1:property>
+            <con1:property key="Labeled@label">After 30 errors, stop</con1:property>
+            <con1:property key="constraint">rO0ABXNyADFjb20uZXZpd2FyZS5sb2FkdWkudXRpbC5hc3NlcnRpb24uUmFuZ2VDb25zdHJhaW50Y94NW62dOawCAAJEAANtYXhEAANtaW54cEA+AAAAAAAAAAAAAAAAAAA=</con1:property>
+            <con1:property key="tolerancePeriod">0</con1:property>
+            <con1:property key="toleranceAllowedOccurrences">0</con1:property>
+            <con1:property key="stopTestOnFailure">true</con1:property>
+          </con1:attributes>
+          <con1:addons/>
+        </con1:addon>
+      </con1:addons>
+      <con1:component type="com.eviware.loadui.impl.component.IntervalComponent" label="Interval 1" id="94c1b285-4f2e-494d-acd3-287ffcaf42b2" category="Scheduler">
+        <con1:properties>
+          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+          <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="startAt" type="java.lang.Long">0</con1:property>
+          <con1:property propagates="true" key="duration" type="java.lang.Long">5</con1:property>
+          <con1:property propagates="true" key="unit" type="java.lang.String">Sec</con1:property>
+          <con1:property propagates="true" key="mode" type="java.lang.String">Single</con1:property>
+          <con1:property propagates="true" key="defaultMode" type="java.lang.Boolean">true</con1:property>
+        </con1:properties>
+        <con1:attributes>
+          <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Interval</con1:property>
+        </con1:attributes>
+        <con1:addons/>
+      </con1:component>
+      <con1:component type="com.eviware.loadui.impl.component.generators.FixedVU" label="Fixed Load 2" id="d74f854a-38a7-4fa9-a26a-b4c85f24af7c" category="Generators">
+        <con1:properties>
+          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+          <con1:property propagates="true" key="stateProperty" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="limitVU" type="java.lang.Long">9223372036854775807</con1:property>
+          <con1:property propagates="true" key="load" type="java.lang.Long">10</con1:property>
+          <con1:property propagates="true" key="interval" type="java.lang.Long">1000</con1:property>
+        </con1:properties>
+        <con1:attributes>
+          <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Fixed Load</con1:property>
+        </con1:attributes>
+        <con1:addons/>
+      </con1:component>
+      <con1:component type="com.eviware.loadui.components.soapui.SoapUISamplerComponent" label="Test Suite fails if we don't get faults:TestCase - Searching after Logging out LoadTests" id="95aad6ed-90b6-4692-a42f-af6350d902b5" category="Runners">
+        <con1:properties>
+          <con1:property propagates="true" key="ModelItem.description" type="java.lang.String"/>
+          <con1:property propagates="true" key="concurrentSamples" type="java.lang.Long">1000</con1:property>
+          <con1:property propagates="true" key="property_name_is_not_relevant_for_private_property" type="java.lang.Long">9223372036854775807</con1:property>
+          <con1:property propagates="true" key="maxQueueSize" type="java.lang.Long">1000</con1:property>
+          <con1:property propagates="true" key="countDiscarded" type="java.lang.Boolean">false</con1:property>
+          <con1:property propagates="true" key="disabledTestSteps" type="java.lang.String"/>
+          <con1:property propagates="true" key="_thinkTime" type="java.lang.Long">0</con1:property>
+          <con1:property propagates="true" key="ReadyApiTestCase" type="com.eviware.soapui.impl.wsdl.testcase.WsdlTestCase">fc3cfb74-e41f-4a86-9308-2be383633755</con1:property>
+          <con1:property propagates="true" key="raiseError" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="outputTestCaseProperties" type="java.lang.Boolean">true</con1:property>
+          <con1:property propagates="true" key="OutputLevel" type="java.lang.String">TestCase only</con1:property>
+          <con1:property propagates="true" key="closeConnectionsAfterRequest" type="java.lang.Boolean">false</con1:property>
+          <con1:property propagates="true" key="disableSoapuiAssertions" type="java.lang.Boolean">false</con1:property>
+          <con1:property propagates="true" key="forceShareDatasources" type="java.lang.Boolean">true</con1:property>
+        </con1:properties>
+        <con1:attributes>
+          <con1:property key="com.eviware.loadui.api.model.ComponentItem@type">Ready API TestCase Runner</con1:property>
+        </con1:attributes>
+        <con1:addons/>
+      </con1:component>
+      <con1:connection outputTerminalId="94c1b285-4f2e-494d-acd3-287ffcaf42b2/outgoingTerminal" inputTerminalId="d74f854a-38a7-4fa9-a26a-b4c85f24af7c/stateTerminal"/>
+      <con1:connection outputTerminalId="d74f854a-38a7-4fa9-a26a-b4c85f24af7c/triggerTerminal" inputTerminalId="95aad6ed-90b6-4692-a42f-af6350d902b5/triggerTerminal"/>
+      <con1:connection outputTerminalId="95aad6ed-90b6-4692-a42f-af6350d902b5/runningTerminal" inputTerminalId="d74f854a-38a7-4fa9-a26a-b4c85f24af7c/Sample Count"/>
+    </con1:scene>
+    <con1:statistics>
+      <con1:page title="DefaultLoadUIStatisticPage"/>
+    </con1:statistics>
+  </con1:loadui-project>
+  <con:loadUITestScenario projectId="08dd4a3e-1bf3-4f79-b12b-6cfa628afe5c" scenarioId="44409020-2538-475c-a21d-decc5ebb9221" name="New Scenario" id="2264b1d7-1ee0-4ca8-b675-fb2e06f4f4d1">
+    <con:settings/>
+  </con:loadUITestScenario>
+  <con:setupScript xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:teardownScript xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:reportParameters/>
+</con:loadUiTest>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Simple Login and Logout w. Properties Steps" searchProperties="true" maxResults="0" id="fa5b070e-49dc-4439-ab6c-1439b26bf27e" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>TestCase - Simple Login and Logout
+
+                This one is easy...
+
+                The test will first login and then it will logout. :-)
+
+                We are using a Property Transfer Step to move password and user name from a Properties Step to the
+                Request and a second Property Transfer Step to move the sessionID we got in the login response to the
+                logout request..</con:description>
+  <con:settings>
+    <con:setting id="ReportTitle">Default Titlkjle</con:setting>
+    <con:setting id="fa5b070e-49dc-4439-ab6c-1439b26bf27efileName">Simple-Login-and-Logout-w.-Properties-Steps</con:setting>
+  </con:settings>
+  <con:testStep type="VirtRunnerTestStep" name="Start Virt Service" id="00b2af04-6121-4c61-945c-d0a6587fe529">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>run</action>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="properties" name="Properties - Username and Password" id="064a47ea-ddad-48fc-98db-dce608508c74">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties>
+        <con:property>
+          <con:name>Username</con:name>
+          <con:value>Loginn${=String.valueOf(Math.random()).substring( 0, 5 )}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>Password</con:name>
+          <con:value>Loginn123</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer - Move Username and Password" id="20798a7f-6573-4a62-9fed-35de96bf28ef">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true">
+        <con:name>TransferUser</con:name>
+        <con:sourceType>Username</con:sourceType>
+        <con:sourceStep>Properties - Username and Password</con:sourceStep>
+        <con:targetType>Request</con:targetType>
+        <con:targetStep>Test Request - login</con:targetStep>
+        <con:targetPath>declare namespace sam='http://www.soapui.org/sample/';
+                            //sam:login/username</con:targetPath>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false">
+        <con:name>TransferPass</con:name>
+        <con:sourceType>Password</con:sourceType>
+        <con:sourceStep>Properties - Username and Password</con:sourceStep>
+        <con:targetType>Request</con:targetType>
+        <con:targetStep>Test Request - login</con:targetStep>
+        <con:targetPath>declare namespace sam='http://www.soapui.org/sample/';
+                            //sam:login/password</con:targetPath>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - login" id="7fca3315-9500-4384-be8e-b72f7ac6c6f4">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - login" outgoingWss="" incomingWss="" id="3100839c-d984-4991-afe1-52b1dc4fcaec" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Loginn${=String.valueOf(Math.random()).substring( 0, 5 )}</username>
+ <password>Loginn123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="fd5aa992-c543-4064-95c6-c7fef63152ab"/>
+        <con:assertion type="Schema Compliance" id="5c73ee14-eb29-451c-9a1f-bb32e96f0709">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="SOAP Fault Assertion" id="659cabe8-8445-426a-8339-adfcbc71a8cf"/>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="Property Transfer - Move sessionID" id="349f39a5-607e-4bd8-84fb-45b08005e778">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" ignoreEmpty="false">
+        <con:name>MoveSessionId</con:name>
+        <con:sourceType>Response</con:sourceType>
+        <con:sourceStep>Test Request - login</con:sourceStep>
+        <con:sourcePath>declare namespace sam='http://www.soapui.org/sample/';
+                            //sam:loginResponse/sessionid</con:sourcePath>
+        <con:targetType>Request</con:targetType>
+        <con:targetStep>Test Request - logout</con:targetStep>
+        <con:targetPath>declare namespace sam='http://www.soapui.org/sample/';
+                            //sam:logout/sessionid</con:targetPath>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - logout" id="d917498a-52c8-40f1-865f-1350d1964362">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>logout</con:operation>
+      <con:request name="Test Request - logout" outgoingWss="" incomingWss="" id="e392e5ca-a4c2-42e6-a4a6-fb7f84b4990f" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:logout>
+ <sessionid>2393479271173149</sessionid>
+ </sam:logout>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="055a1e65-ccf8-4c47-b6a0-8427cb2ca94a"/>
+        <con:assertion type="Schema Compliance" id="d2f0e7f4-e296-4d22-8ad3-c5d1be240ff3">
+          <con:configuration/>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="VirtRunnerTestStep" name="Stop Virt Service" id="b40b9581-430d-4277-80d1-88481f79212a">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>stop</action>
+    </con:config>
+  </con:testStep>
+  <con:loadTest name="LoadTest 1" id="02070f93-1e38-4c2d-b769-a0e866f4a22a">
+    <con:settings>
+      <con:setting id="ReportTitle">Default Title</con:setting>
+      <con:setting id="HttpSettings@close-connections">false</con:setting>
+      <con:setting id="hasBeenConvertedToLoadUITest">true</con:setting>
+    </con:settings>
+    <con:threadCount>5</con:threadCount>
+    <con:startDelay>0</con:startDelay>
+    <con:sampleInterval>250</con:sampleInterval>
+    <con:calculateTPSOnTimePassed>false</con:calculateTPSOnTimePassed>
+    <con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+    <con:historyLimit>-1</con:historyLimit>
+    <con:testLimit>60</con:testLimit>
+    <con:limitType>TIME</con:limitType>
+    <con:loadStrategy>
+      <con:type>Simple</con:type>
+    </con:loadStrategy>
+    <con:assertion type="Step Status" name="Step Status"/>
+    <con:maxAssertionErrors>100</con:maxAssertionErrors>
+    <con:statisticsLogFolder/>
+    <con:statisticsLogInterval>0</con:statisticsLogInterval>
+    <con:logStatisticsOnThreadChange>false</con:logStatisticsOnThreadChange>
+    <con:cancelOnReachedLimit>false</con:cancelOnReachedLimit>
+    <con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+    <con:strategyInterval>500</con:strategyInterval>
+    <con:updateStatisticsPerTestStep>false</con:updateStatisticsPerTestStep>
+    <con:reportParameters/>
+  </con:loadTest>
+  <con:properties/>
+  <con:reportParameters>
+    <con:property>
+      <con:name>ReportTitle</con:name>
+      <con:value>${=testCase.name}</con:value>
+    </con:property>
+  </con:reportParameters>
+  <con:breakPoints>
+    <con:testStepId>00b2af04-6121-4c61-945c-d0a6587fe529</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

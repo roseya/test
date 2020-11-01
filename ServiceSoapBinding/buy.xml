@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation action="http://www.soapui.org/sample/buy" name="buy" bindingOperationName="buy" inputName="" isOneWay="false" receivesAttachments="false" sendsAttachments="false" type="Request-Response" id="5c6be0c3-52a9-4e8f-85fa-f139f07f910a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5c6be0c3-52a9-4e8f-85fa-f139f07f910afileName">buy</con:setting>
+  </con:settings>
+  <con:call name="buy rq" outgoingWss="" incomingWss="" id="9c69161b-4d30-4804-844e-96e7740c1f4d" defaultOutgoingWss="" defaultIncomingWss="">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:buy>
+ <sessionid>?</sessionid>
+ <buystring>?</buystring>
+ </sam:buy>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:username xsi:nil="true"/>
+      <con:password xsi:nil="true"/>
+      <con:domain xsi:nil="true"/>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:jmsPropertyConfig/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

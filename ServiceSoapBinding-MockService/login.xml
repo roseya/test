@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:mockOperation name="login" interface="ServiceSoapBinding" operation="login" id="9482129a-e9a7-4fc0-a4b6-6237963aaf97" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="9482129a-e9a7-4fc0-a4b6-6237963aaf97fileName">login</con:setting>
+  </con:settings>
+  <con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+                def holder = groovyUtils.getXmlHolder( mockRequest.requestContent )
+
+                def username = holder.getNodeValue( "//username" )
+                def password = holder.getNodeValue( "//password" )
+                def sum = username + password
+
+                // validate
+                if( sum.length() > 25 || sum.length() &lt; 10 || !username.startsWith("Login") || !password.endsWith(
+                "123" ))
+                return "Invalid Login Fault"
+
+                if( context.hasProperty( sum ))
+                return "Already Logged In Fault"
+
+                // seems ok
+                def sessionid = String.valueOf( Math.random() ).substring( 2 )
+
+                context.setProperty( sum, sessionid )
+                context.setProperty( sessionid, sum )
+
+                requestContext.sessionid = sessionid
+                return "Ok Response"</con:dispatchPath>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:defaultResponse>Ok Response</con:defaultResponse>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response name="Ok Response" encoding="UTF-8" httpResponseStatus="200" id="25e19ac5-b249-45c9-ad04-2a1ce42674af" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:loginResponse>
+ <sessionid>${sessionid}</sessionid>
+ </sam:loginResponse>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Invalid Login Fault" encoding="UTF-8" httpResponseStatus="200" id="3987d410-34fb-4d32-a681-944e3e57b686" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Body>
+ <soapenv:Fault>
+ <faultcode>Client</faultcode>
+ <faultstring>Invalid Login</faultstring>
+ <detail>
+ <sam:loginFault>The login credentials are invalid</sam:loginFault>
+ </detail>
+ </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response name="Already Logged In Fault" encoding="UTF-8" httpResponseStatus="200" id="a613c941-bf43-4c53-8bea-ef3cdcb5d150" dataSource="">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Body>
+ <soapenv:Fault>
+ <faultcode>Client</faultcode>
+ <faultstring>Already Logged In</faultstring>
+ <detail>
+ <sam:loginFault>The specified credentials are already logged in</sam:loginFault>
+ </detail>
+ </soapenv:Fault>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:dispatchConfig/>
+</con:mockOperation>

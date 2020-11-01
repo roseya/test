@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="TestCase - Invalid Login" searchProperties="true" maxResults="0" id="08d06f8e-f7a9-4ca1-a3d4-66de695bb7c7" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Now, what's this? TestCases that we want to fail?
+
+                Yes, sometimes it's a great idea to test that the Web Service fail when it should and fail correctly.
+                Therefore the TestCase will pass if we get fails for every test in the Case.
+
+                These tests are for login alone.</con:description>
+  <con:settings>
+    <con:setting id="08d06f8e-f7a9-4ca1-a3d4-66de695bb7c7fileName">TestCase---Invalid-Login</con:setting>
+  </con:settings>
+  <con:testStep type="VirtRunnerTestStep" name="Start Virt Service" id="8b1d0a80-75c3-4bb8-a441-83a2b46caee0">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>run</action>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - login wrong username" id="9759f856-e1df-44f2-ab37-c160f3092d43">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - login wrong username" outgoingWss="" incomingWss="" id="795c7147-eddf-4be0-bb58-cbde5de5d299" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Logi</username>
+ <password>Loginn123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="dc24925c-60c2-4512-a81d-2dfaef178eb7"/>
+        <con:assertion type="Schema Compliance" id="18210df8-fcec-404d-9509-349245234d4b">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="Not SOAP Fault Assertion" id="bab99bb3-92db-44c7-8b93-1e64ac58b715"/>
+        <con:assertion type="XPath Match" id="e1cc7fb4-4d56-4f4e-87d5-b4164f11e82b">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+                                    //detail/sam:loginFault</path>
+            <content>The login credentials are invalid</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - Password without numbers" id="4032426b-9b98-427e-b1a2-173126421f50">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - Password without numbers" outgoingWss="" incomingWss="" id="fc13d12d-a7d1-4ba0-ac22-356e039f6eaa" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Loginn</username>
+ <password>Loginn</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="78980f95-3da2-43fc-9b7a-6d902755c6fd"/>
+        <con:assertion type="Schema Compliance" id="de868c13-5423-4593-996b-5a48acf1bc43">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="Not SOAP Fault Assertion" id="565656b3-c671-4277-b72a-9a3b16aedb23"/>
+        <con:assertion type="XPath Match" id="c70d0930-5a46-44c3-aee8-aa534a545373">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+                                    //detail/sam:loginFault</path>
+            <content>The login credentials are invalid</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - To long User/Pass Combo (25)" id="147302d2-3d76-4444-9926-da8e35456a76">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - To long User/Pass Combo (25)" outgoingWss="" incomingWss="" id="d6bc0cc8-4e3f-49d5-9683-363353097c8f" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Loginnnnnnsdfgdfgf</username>
+ <password>Loginnnnnn123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="54ddedef-7ae9-4689-88f7-7dd89790ef77"/>
+        <con:assertion type="Schema Compliance" id="44f7303b-d8cd-4cf4-a55b-ee8d25503d46">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="Not SOAP Fault Assertion" id="dde1ac57-baa9-4a55-abdf-94b6d676da88"/>
+        <con:assertion type="XPath Match" id="51102faa-5deb-4bde-b8a5-972264f4f18d">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+                                    //detail/sam:loginFault</path>
+            <content>The login credentials are invalid</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - To short User/Pass Combo (9)" id="bb38f289-7c1e-4ee9-a4a5-ee4ae5c7e7e3">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - To short User/Pass Combo (9)" outgoingWss="" incomingWss="" id="86b4a371-6d8f-4167-a10f-dbafd5aa8f8d" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Log</username>
+ <password>Log123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="c01f73f9-76da-4fa2-b569-b1f2480c1168"/>
+        <con:assertion type="Schema Compliance" id="8690d947-32f5-4c35-a47c-5ce0b347b210">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="Not SOAP Fault Assertion" id="cf7fb070-14ef-47f2-8ff9-6c97496be8e7"/>
+        <con:assertion type="XPath Match" id="f59b9a53-27cf-4024-bac5-ea4b29218675">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+                                    //detail/sam:loginFault</path>
+            <content>The login credentials are invalid</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - Double Login step 1 (SUCCESS)" id="7723b4de-ce0f-4bc5-a481-754517a948bc">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - Double Login step 1 (SUCCESS)" outgoingWss="" incomingWss="" id="8bcc15d6-71a4-4785-9469-1af10b051e6c" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Login</username>
+ <password>Login123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="c83b6b14-8f18-4f12-8b58-dc320d31fab1"/>
+        <con:assertion type="Schema Compliance" id="8fc3e954-a615-456d-973e-41e2df79df03">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="SOAP Fault Assertion" id="a18e0381-c6c6-45ab-91bd-00084ba43c99"/>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - Double Login step 2 (FAIL)" id="67336317-5d62-483a-9532-846701c0c46c">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - Double Login step 2 (FAIL)" outgoingWss="" incomingWss="" id="34cc434d-9baa-46b7-af10-5a2c42886321" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Login</username>
+ <password>Login123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="2ae7ce08-5448-4bac-ba3b-e12f6a386896"/>
+        <con:assertion type="Schema Compliance" id="da411d70-6768-44d3-bd51-1c57f2d8a8f0">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="Not SOAP Fault Assertion" id="ac022551-7791-4d17-93fe-fad7b6c91388"/>
+        <con:assertion type="XPath Match" id="b9d7f0db-058d-48fa-ac3f-1bfde735aef8">
+          <con:configuration>
+            <path>//faultstring</path>
+            <content>Already Logged In</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - logout" id="3ceeea75-29eb-40b0-a18f-09815acb14bc">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>logout</con:operation>
+      <con:request name="Test Request - logout" outgoingWss="" incomingWss="" id="652a057b-c73d-44ea-a64d-836218316ff9" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:logout>
+ <sessionid>${Test Request - Double Login step 1 (SUCCESS)#Response#//sam:loginResponse/sessionid}</sessionid>
+ </sam:logout>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="60536c80-1791-43e8-921e-a30e06fbbe80"/>
+        <con:assertion type="Schema Compliance" id="64728858-fa81-4221-b87d-a4c5246d2395">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="XPath Match" id="8e59e3b8-e14e-488e-a1df-61d863b7e2a0">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+                                    //sam:logoutResponse/sessioninfo</path>
+            <content>OK</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="VirtRunnerTestStep" name="Stop Virt Service" id="8ae66ee4-2122-4a98-8f70-f46d442e4055">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>stop</action>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

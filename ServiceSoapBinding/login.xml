@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation action="http://www.soapui.org/sample/login" name="login" bindingOperationName="login" inputName="" isOneWay="false" receivesAttachments="false" sendsAttachments="false" type="Request-Response" id="36df8917-7b0b-4bb6-af05-be174dc73b49" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="36df8917-7b0b-4bb6-af05-be174dc73b49fileName">login</con:setting>
+  </con:settings>
+  <con:call name="login rq" outgoingWss="" incomingWss="" id="350d27d5-cb78-4fab-b4f4-fd68d9353ce0" defaultOutgoingWss="" defaultIncomingWss="">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>Login</username>
+ <password>Login123</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:username xsi:nil="true"/>
+      <con:password xsi:nil="true"/>
+      <con:domain xsi:nil="true"/>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:jmsPropertyConfig/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="More Than Less Than TestCase" searchProperties="true" maxResults="0" id="4c241e8d-2cf3-4df7-b303-cf7e97f5dfbe" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>This TestCase shows some interesting assertions. Check out the search TestStep, there are
+                two assertions "XPath retrieve sibling value"
+                and "XPath Match More Than Less Than" that shows some interesting ways of using XPath.</con:description>
+  <con:settings>
+    <con:setting id="4c241e8d-2cf3-4df7-b303-cf7e97f5dfbefileName">More-Than-Less-Than-TestCase</con:setting>
+  </con:settings>
+  <con:testStep type="VirtRunnerTestStep" name="Start Virt Service" id="1fa073dd-4be1-4f58-9db5-49a207187026">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>run</action>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="properties" name="Properties - Username and Password" id="74a10789-23a1-4ad1-8844-66ff1e70f460">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties>
+        <con:property>
+          <con:name>Username</con:name>
+          <con:value>Logini${=String.valueOf(Math.random()).substring( 0, 5 )}</con:value>
+        </con:property>
+        <con:property>
+          <con:name>Password</con:name>
+          <con:value>Logini123</con:value>
+        </con:property>
+        <con:property>
+          <con:name>SearchPhrase</con:name>
+          <con:value>Item 1</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="properties" name="Properties - Wanted Response" id="9c1ef45b-fb78-4774-a590-ae41e7cb7d17">
+    <con:settings/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties>
+        <con:property>
+          <con:name>Item</con:name>
+          <con:value>Item 3</con:value>
+        </con:property>
+        <con:property>
+          <con:name>Wanted At Least</con:name>
+          <con:value>2.50</con:value>
+        </con:property>
+        <con:property>
+          <con:name>Wanted at most</con:name>
+          <con:value>3.50</con:value>
+        </con:property>
+        <con:property>
+          <con:name>Sibling</con:name>
+          <con:value>2.99</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - login" id="c5323873-f11a-4f35-9d6b-f2902e9a3877">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>login</con:operation>
+      <con:request name="Test Request - login" outgoingWss="" incomingWss="" id="0f99a60a-6117-400e-93ac-39fe32c70def" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:login>
+ <username>${Properties - Username and Password#Username}</username>
+ <password>${Properties - Username and Password#Password}</password>
+ </sam:login>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="7ed5ba71-1e22-445a-a19d-a0ea780a43cd"/>
+        <con:assertion type="Schema Compliance" id="d8da1637-ed36-4f39-a288-49b069beacf9">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="SOAP Fault Assertion" id="97cb5395-bc4f-4bda-99d2-824c85d41f0c"/>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - search" id="b04c6313-062b-4199-941c-f1a4b35413ee">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>search</con:operation>
+      <con:request name="Test Request - search" outgoingWss="" incomingWss="" id="8a77ed9c-c21d-4b2b-abcb-8575d5f38f59" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:search>
+ <sessionid>${Test Request - login#Response#//sam:loginResponse/sessionid}</sessionid>
+ <searchstring>all</searchstring>
+ </sam:search>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="edfa8bb7-1d23-4c9f-b7bb-87ed0c53dfab"/>
+        <con:assertion type="SOAP Fault Assertion" id="744a364d-defa-42b0-ab6f-ac78af3b5a36"/>
+        <con:assertion type="Schema Compliance" name="Schema Compliance" id="ddc81b25-2ae0-465c-aedd-83795df1e331">
+          <con:configuration/>
+        </con:assertion>
+        <con:assertion type="XPath Match" name="XPath Match for description" id="a46dacf3-6b95-44d3-ad06-0a7278a329b8">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+//sam:searchResponse[1]/sam:searchResponseContent[1]/item[3]/description[1]</path>
+            <content>One towel. Massively useful thing. 
+Impress the strags with this amazing cloth!</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="XPath Match" name="XPath Match More Than Less Than" id="241b38ed-3f13-4abd-b69b-2f8449823eea">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+                                    //sam:searchResponse[1]/sam:searchResponseContent/item[id="${Properties - Wanted Response#Item}"]/price
+                                    >= ("${Properties - Wanted Response#Wanted At Least}")
+                                    and
+                                    //sam:searchResponse[1]/sam:searchResponseContent/item[id="${Properties - Wanted Response#Item}"]/price
+                                    &lt;= ("${Properties - Wanted Response#Wanted At Most}" )</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="XPath Match" name="XPath retrieve sibling value" id="d44c2971-5e0e-4bd2-80df-b46c968de739">
+          <con:configuration>
+            <path>declare namespace sam='http://www.soapui.org/sample/';
+
+                                    //sam:searchResponse[1]/sam:searchResponseContent/item[price="${Properties - Wanted Response#Sibling}"]/id</path>
+            <content>${Properties - Wanted Response#Item}</content>
+            <allowWildcards>false</allowWildcards>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="request" name="Test Request - logout" id="823a19ba-81bf-4401-9eed-1bdf9ef28609">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>logout</con:operation>
+      <con:request name="Test Request - logout" outgoingWss="" incomingWss="" id="fa9ad7c5-b6fe-4ba9-9f55-caea9fa755e5" defaultOutgoingWss="" defaultIncomingWss="">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:logout>
+ <sessionid>${Test Request - login#Response#//sam:loginResponse/sessionid}</sessionid>
+ </sam:logout>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion type="SOAP Response" id="12dd3fdd-3009-49c6-b939-9ed2443ee543"/>
+        <con:assertion type="Schema Compliance" id="d52f6cfc-9dd6-4b0d-abf9-2110d70aa26d">
+          <con:configuration/>
+        </con:assertion>
+        <con:credentials>
+          <con:username xsi:nil="true"/>
+          <con:password xsi:nil="true"/>
+          <con:domain xsi:nil="true"/>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="VirtRunnerTestStep" name="Stop Virt Service" id="2b462c16-64ba-41ae-95f4-c797ff9ae7ed">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>ServiceSoapBinding MockService</server>
+      <action>stop</action>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>1fa073dd-4be1-4f58-9db5-49a207187026</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

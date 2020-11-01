@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation action="http://www.soapui.org/sample/logout" name="logout" bindingOperationName="logout" inputName="" isOneWay="false" receivesAttachments="false" sendsAttachments="false" type="Request-Response" id="3916c95d-b779-42bc-a372-9f9c20d8fcce" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3916c95d-b779-42bc-a372-9f9c20d8fccefileName">logout</con:setting>
+  </con:settings>
+  <con:call name="logout rq" outgoingWss="" incomingWss="" id="64a23821-caf4-4ad1-95c5-90c95a1bab8c" defaultOutgoingWss="" defaultIncomingWss="">
+    <con:settings/>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:logout>
+ <sessionid>21974891784000294</sessionid>
+ </sam:logout>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:username xsi:nil="true"/>
+      <con:password xsi:nil="true"/>
+      <con:domain xsi:nil="true"/>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:jmsPropertyConfig/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

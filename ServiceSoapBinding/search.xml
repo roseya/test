@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:operation action="http://www.soapui.org/sample/search" name="search" bindingOperationName="search" inputName="" isOneWay="false" receivesAttachments="false" sendsAttachments="false" type="Request-Response" id="faec375e-8b92-40e4-a160-da0fc5ef6eac" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="faec375e-8b92-40e4-a160-da0fc5ef6eacfileName">search</con:setting>
+  </con:settings>
+  <con:call name="search rq" outgoingWss="" incomingWss="" id="36d27fd1-d96d-439b-8d9a-95baaa5adbb1" defaultOutgoingWss="" defaultIncomingWss="">
+    <con:settings>
+      <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+    </con:settings>
+    <con:encoding>UTF-8</con:encoding>
+    <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+    <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+ <soapenv:Header/>
+ <soapenv:Body>
+ <sam:search>
+ <sessionid>0154144954954053</sessionid>
+ <searchstring>?</searchstring>
+ </sam:search>
+ </soapenv:Body>
+</soapenv:Envelope>]]></con:request>
+    <con:credentials>
+      <con:username xsi:nil="true"/>
+      <con:password xsi:nil="true"/>
+      <con:domain xsi:nil="true"/>
+      <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+      <con:authType>No Authorization</con:authType>
+    </con:credentials>
+    <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+    <con:jmsPropertyConfig/>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+    <con:wsrmConfig version="1.2"/>
+  </con:call>
+</con:operation>

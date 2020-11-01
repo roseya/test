@@ -1,0 +1,11 @@
+<con:reportTemplate xmlns:con="http://eviware.com/soapui/config">
+  <con:name>SystemPropertiesReport</con:name>
+  <con:path>/home/robert/soapui/bin/reports/subreports/loadtest/LoadTestLog.jrxml</con:path>
+  <con:reportType>COMMON</con:reportType>
+  <con:reportLevel>SUBREPORT</con:reportLevel>
+  <con:nameInReport>LoadTestLog</con:nameInReport>
+  <con:data xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <con:description>NO DESC</con:description>
+  <con:scope>PROJECT</con:scope>
+  <con:dataSource xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+</con:reportTemplate>
