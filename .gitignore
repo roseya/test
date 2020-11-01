@@ -1,6 +1,17 @@
-settings.xml
+target/
+build/
+
+**/logs
 .settings/
 
-reports
 
-**/Ecommerce
+reports/
+reports/settings.xml
+reports/**
+**/reports
+
+
+
+
+
+
