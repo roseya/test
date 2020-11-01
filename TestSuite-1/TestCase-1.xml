@@ -5,4 +5,4 @@
     <con:settings/><con:config>
       <script>testing vm 4
 local 6</script>
-    </con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+    </con:config></con:testStep><con:testStep type="groovy" name="Groovy Script 2" id="d3820324-3bf4-4527-901d-89ecaf4c71cf"><con:settings/><con:config><script/></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
