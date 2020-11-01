@@ -22,12 +22,7 @@ local 6</script>
       <script/>
     </con:config>
   </con:testStep>
-  <con:testStep id="e27d6bbe-cfea-4376-9d0e-15ebb5b70548" name="Groovy Script 3 2" type="groovy">
-    <con:settings/>
-    <con:config>
-      <script/>
-    </con:config>
-  </con:testStep>
+  
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
@@ -35,9 +30,5 @@ local 6</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>e27d6bbe-cfea-4376-9d0e-15ebb5b70548</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
+  
 </con:testCase>
