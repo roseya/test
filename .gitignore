@@ -1,0 +1,11 @@
+target/
+build/
+
+**/logs
+.settings/
+
+
+reports/
+reports/settings.xml
+reports/**
+**/reports
