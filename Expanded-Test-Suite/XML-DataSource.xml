@@ -113,13 +113,8 @@
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="XML">
-        <con:configuration>
-          <sourceStep>Test Request - search</sourceStep>
-          <sourceProperty>Response</sourceProperty>
-          <rowPath>declare namespace sam='http://www.soapui.org/sample/';
-                                //sam:searchResponseContent[1]/item</rowPath>
-          <columnPath>id</columnPath>
-        </con:configuration>
+        <con:configuration><sourceStep>Test Request - search</sourceStep><sourceProperty>Response</sourceProperty><rowPath>declare namespace sam='http://www.soapui.org/sample/';
+                                //sam:searchResponseContent[1]/item</rowPath><columnPath>id</columnPath></con:configuration>
       </con:dataSource>
       <con:shared>true</con:shared>
       <con:property>Items</con:property>

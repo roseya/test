@@ -1,38 +1,38 @@
 <jasperReport xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="535" pageHeight="842" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
- <template>"../../styles.jrtx"</template>
- <field name="name" class="java.lang.String"/>
- <field name="value" class="java.lang.String"/>
- <columnHeader>
- <band height="59">
- <staticText>
- <reportElement style="ColumnHeader" x="0" y="35" width="122" height="20"/>
- <textElement textAlignment="Left" verticalAlignment="Middle"/>
- <text>Name</text>
- </staticText>
- <staticText>
- <reportElement style="ColumnHeader" x="133" y="35" width="40" height="20"/>
- <textElement textAlignment="Left" verticalAlignment="Middle"/>
- <text>Value</text>
- </staticText>
- <staticText>
- <reportElement style="SmallHeader" x="0" y="0" width="535" height="34"/>
- <textElement textAlignment="Left" verticalAlignment="Middle"/>
- <text>System Properties</text>
- </staticText>
- </band>
- </columnHeader>
- <detail>
- <band height="21">
- <textField>
- <reportElement x="0" y="1" width="122" height="20"/>
- <textElement textAlignment="Left" verticalAlignment="Top"/>
- <textFieldExpression class="java.lang.String">$F{name}</textFieldExpression>
- </textField>
- <textField>
- <reportElement x="133" y="1" width="350" height="20"/>
- <textElement textAlignment="Left" verticalAlignment="Top"/>
- <textFieldExpression class="java.lang.String">$F{value}</textFieldExpression>
- </textField>
- </band>
- </detail>
+   <template>"../../styles.jrtx"</template>
+   <field name="name" class="java.lang.String"/>
+   <field name="value" class="java.lang.String"/>
+   <columnHeader>
+      <band height="59">
+         <staticText>
+            <reportElement style="ColumnHeader" x="0" y="35" width="122" height="20"/>
+            <textElement textAlignment="Left" verticalAlignment="Middle"/>
+            <text>Name</text>
+         </staticText>
+         <staticText>
+            <reportElement style="ColumnHeader" x="133" y="35" width="40" height="20"/>
+            <textElement textAlignment="Left" verticalAlignment="Middle"/>
+            <text>Value</text>
+         </staticText>
+         <staticText>
+            <reportElement style="SmallHeader" x="0" y="0" width="535" height="34"/>
+            <textElement textAlignment="Left" verticalAlignment="Middle"/>
+            <text>System Properties</text>
+         </staticText>
+      </band>
+   </columnHeader>
+   <detail>
+      <band height="21">
+         <textField>
+            <reportElement x="0" y="1" width="122" height="20"/>
+            <textElement textAlignment="Left" verticalAlignment="Top"/>
+            <textFieldExpression class="java.lang.String">$F{name}</textFieldExpression>
+         </textField>
+         <textField>
+            <reportElement x="133" y="1" width="350" height="20"/>
+            <textElement textAlignment="Left" verticalAlignment="Top"/>
+            <textFieldExpression class="java.lang.String">$F{value}</textFieldExpression>
+         </textField>
+      </band>
+   </detail>
 </jasperReport>
