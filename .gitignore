@@ -9,3 +9,6 @@ reports/
 reports/settings.xml
 reports/**
 **/reports
+
+settings.xml
+**/settings.xml
