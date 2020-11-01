@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockAction name="logout" method="GET" resourcePath="/logout" id="9d18978b-2c80-4d62-928a-b052e23e798c" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="22685409-faf3-4411-8195-d31f6ef6c43efileName">logout</con:setting>
+    <con:setting id="9d18978b-2c80-4d62-928a-b052e23e798cfileName">logout</con:setting>
+  </con:settings>
+  <con:defaultResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">OK Response</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>def queryString = mockRequest.getRequest().getQueryString()
+
+String[] fields = queryString.split("&amp;");
+String[] kv;
+
+HashMap&lt;String, String> params = new HashMap&lt;String, String>()
+for (int i = 0; i &lt; fields.length; ++i){
+    kv = fields[i].split("=");
+    if (2 == kv.length)
+     params.put(kv[0], kv[1]); 
+}
+
+def sessionid = params.get("sessionid")
+
+// check
+if( !context.hasProperty( sessionid ))
+ return "Invalid Session Id Fault"
+
+// logout
+context.removeProperty( context.getProperty( sessionid ))
+context.removeProperty( sessionid )
+requestContext.sessioninfo = "OK"
+
+return "Ok Response"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:parameterDispatcherRuleContainer/>
+  <con:routeScript/>
+  <con:response name="OK Response" id="b2d9446b-467c-443a-a237-565359fcf98c" httpResponseStatus="200" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Successfully logged out session" : "${sessioninfo}"}</con:responseContent>
+  </con:response>
+  <con:response name="Invalid Session Id Fault" id="98df60e4-b633-4a68-b439-32d1bda9a479" httpResponseStatus="404" mediaType="application/json" dataSource="">
+    <con:settings/>
+    <con:responseContent>{"Failed" : "Invalid Session Id"}</con:responseContent>
+  </con:response>
+</con:restMockAction>

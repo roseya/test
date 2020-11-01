@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:restMockService port="8084" path="/" host="localhost" name="EcommerceVirt" routeModeEnabled="false" id="d81c4755-073b-46ab-aa30-a6df021d4d89" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2a6dfe00-ebf7-44f2-8b96-64c69a5b5ed4fileName">RESTMockService</con:setting>
+    <con:setting id="d81c4755-073b-46ab-aa30-a6df021d4d89fileName">EcommerceVirt</con:setting>
+  </con:settings>
+  <con:properties/>
+  <con:constraints>
+    <con:congestion>0</con:congestion>
+    <con:inputBandwidth>-1</con:inputBandwidth>
+    <con:outputBandwidth>-1</con:outputBandwidth>
+    <con:maxThreadPoolCapacity>2000</con:maxThreadPoolCapacity>
+    <con:coreThreadPoolCapacity>5</con:coreThreadPoolCapacity>
+    <con:minLatency>0</con:minLatency>
+    <con:minApplicationDelay>0</con:minApplicationDelay>
+    <con:virtError>
+      <con:code>200</con:code>
+      <con:start>0</con:start>
+      <con:endless>true</con:endless>
+    </con:virtError>
+  </con:constraints>
+  <con:dataSources/>
+  <con:headerValidator type="NONE"/>
+</con:restMockService>

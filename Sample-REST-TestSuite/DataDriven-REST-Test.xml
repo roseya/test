@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="040f09d4-dbf2-4816-9383-1b0a6085e75a" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="DataDriven REST Test" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Datadriven test help test a scenario where the same or multiple APIs need to be tested with a large amount of data inputs, it can also be used to test a large dataset of expected results through assertions. These data inputs can be picked up from a Database, Excel spread sheet
+and many other data entities.
+
+Steps:
+First step turns on Virtual REST Service
+Second step makes the Login call to the virtual Service and validates that it contains a "session id" json element in the response
+Third step picks up the session id from the second step and passes it into the request input parameters. We validate the response for "200 OK" status code.
+Fifth Step turns off the virtual REST Service
+
+NOTE: If you would like to run the Login step without as a standalone step please turn on the virtual service under the ReadyAPI Virtualization Tool
+NOTE: Check the TestCase transaction log after the execution of the test to view every single requet and response</con:description>
+  <con:settings>
+    <con:setting id="040f09d4-dbf2-4816-9383-1b0a6085e75afileName">DataDriven-REST-Test</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="VirtRunnerTestStep" name="StartService" id="3e086f11-87bf-4f31-94e7-80f81995ddc8">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>EcommerceVirt</server>
+      <action>run</action>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="DataSource" id="f0c47a2d-6317-4aff-ae84-4c4f62b41c66">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Grid">
+        <con:configuration>
+          <check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Temil</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password1</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Justin</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Nathan</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password3</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Gail</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password4</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Ali</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password5</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Darlin</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password6</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">John</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password7</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Jake</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password8</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Roland</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password9</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">Eddie</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">Password10</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <recognizeAsPlainText>true</recognizeAsPlainText>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>username</con:property>
+      <con:property>password</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Login" id="2b02bf6d-274e-41fc-81cb-293779e06f58">
+    <con:settings/>
+    <con:config service="Ecommerce" resourcePath="/login/" methodName="Login" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Login" id="af9f46ad-d5ad-4c3c-bcde-e2f266c3dc2c" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request>{"sample" : "1 "}</con:request>
+        <con:originalUri>http://localhost/login</con:originalUri>
+        <con:assertion type="JsonPath Existence Match" id="92e9bc11-3656-4d2f-aab9-0814439ec6df" name="Check for existence of [sessionid]">
+          <con:configuration>
+            <path>$['sessionid']</path>
+            <content>true</content>
+            <allowWildcards>false</allowWildcards>
+            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+            <ignoreComments>false</ignoreComments>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:parameters>
+          <con:entry key="password" value="${DataSource#password}"/>
+          <con:entry key="username" value="${DataSource#username}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>username</con:entry>
+          <con:entry>password</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="f27a7295-1f08-4642-a3be-7ae9878517f0">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="712e7e53-7afa-4695-8bf2-bc7b9af8c08a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="834e9f34-445a-4d32-b042-ef79046664e3">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="19b3aa32-a1f5-474e-bd47-6ecf34074e03">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8adf9beb-0001-459f-b854-d8161046b013">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="85fcf76d-cc70-4a0b-a2f6-7b043cf8233a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aaa8e0b8-c982-402f-aabc-53999ad72736">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="613bb63e-dfae-4525-8f53-7cc0745a1be1">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c7173b3a-fee4-45c8-906c-55deaef4eb0d">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="Logout" id="7024fe11-6ad4-42ea-9d1d-52437f250b9e">
+    <con:settings/>
+    <con:config service="Ecommerce" resourcePath="/logout" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="Logout" id="05080aa5-8817-44ff-ad88-cf8aec040aef" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Accept" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8084</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/logout</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="669153b5-171f-40f6-8f3c-9fbb86de9c45" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <entry key="sessionid" value="${Login#Response#$['sessionid']}" xmlns="http://eviware.com/soapui/config"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>sessionid</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="f27a7295-1f08-4642-a3be-7ae9878517f0">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="712e7e53-7afa-4695-8bf2-bc7b9af8c08a">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="834e9f34-445a-4d32-b042-ef79046664e3">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="19b3aa32-a1f5-474e-bd47-6ecf34074e03">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8adf9beb-0001-459f-b854-d8161046b013">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="85fcf76d-cc70-4a0b-a2f6-7b043cf8233a">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="aaa8e0b8-c982-402f-aabc-53999ad72736">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="613bb63e-dfae-4525-8f53-7cc0745a1be1">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c7173b3a-fee4-45c8-906c-55deaef4eb0d">
+            <con:authProfile>Inherit From Parent</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="70cd03a4-55c6-4c18-be93-9b9656bd9ba9">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>Login</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="VirtRunnerTestStep" name="StopService" id="e00b508f-cc8f-4c5d-a30f-98d656cd87a3">
+    <con:settings/>
+    <con:config>
+      <url>localhost</url>
+      <server>EcommerceVirt</server>
+      <action>stop</action>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>f0c47a2d-6317-4aff-ae84-4c4f62b41c66</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>70cd03a4-55c6-4c18-be93-9b9656bd9ba9</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>3e086f11-87bf-4f31-94e7-80f81995ddc8</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>
