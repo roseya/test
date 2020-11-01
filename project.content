@@ -9,6 +9,7 @@ TestSuite-1\TestCase-1.xml
 TestSuite-1\TestCase-2.xml
 TestSuite-2\TestCase-1.xml
 TestSuite-2\TestCase-2.xml
+TestSuite-2\TestCase-3.xml
 EcommerceVirt\%2Ftest.xml
 EcommerceVirt\buy.xml
 EcommerceVirt\login.xml
