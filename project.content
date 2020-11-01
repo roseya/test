@@ -7,6 +7,7 @@ Sample-REST-TestSuite\Integration-Test.xml
 Sample-REST-TestSuite\DataDriven-REST-Test.xml
 TestSuite-1\TestCase-1.xml
 TestSuite-1\TestCase-2.xml
+TestSuite-1\TestCase-3.xml
 TestSuite-2\TestCase-1.xml
 TestSuite-2\TestCase-2.xml
 EcommerceVirt\%2Ftest.xml
