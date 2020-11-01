@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testSuite name="Simple Test Suite" id="21163bcc-d79b-43c4-b47b-e9a9e4465539" xmlns:con="http://eviware.com/soapui/config">
+<con:testSuite id="21163bcc-d79b-43c4-b47b-e9a9e4465539" name="Simple Test Suite" xmlns:con="http://eviware.com/soapui/config">
   <con:description>This is a sample Test Suite.
 
             It contains a number of TestCases Illustrating a number of principles with ReadyAPI Test.
 
-            Try each test and read the descriptions.</con:description>
-  <con:settings>
-    <con:setting id="ExportJUnitReportAction@report-directory">C:\dev\testreport</con:setting>
-    <con:setting id="ExportJUnitReportAction@clear-existing">true</con:setting>
-    <con:setting id="ExportJUnitReportAction@format">Frames</con:setting>
-    <con:setting id="CreateReportAction@report-directory">C:\dev\testreport</con:setting>
-    <con:setting id="CreateReportAction@format">Multiple Pages</con:setting>
-    <con:setting id="IncludeOverview">true</con:setting>
-    <con:setting id="IncludeResults">true</con:setting>
-    <con:setting id="FlowLayout">false</con:setting>
-    <con:setting id="ErrorDetails">true</con:setting>
-    <con:setting id="IncludeCoverage">true</con:setting>
-    <con:setting id="ReportTitle">Default Title</con:setting>
-    <con:setting id="21163bcc-d79b-43c4-b47b-e9a9e4465539fileName">Simple-Test-Suite</con:setting>
-  </con:settings>
-  <con:runType>SEQUENTIAL</con:runType>
-  <con:properties/>
-  <con:setupScript/>
-  <con:tearDownScript/>
-  <con:reportScript>import soapui.demo.subreport.SystemPropertiesSubReport
+            Try each test and read the descriptions.</con:description><con:settings>
+    <con:setting id="ExportJUnitReportAction@report-directory">C:\dev\testreport</con:setting><con:setting id="ExportJUnitReportAction@clear-existing">true</con:setting><con:setting id="ExportJUnitReportAction@format">Frames</con:setting><con:setting id="CreateReportAction@report-directory">C:\dev\testreport</con:setting><con:setting id="CreateReportAction@format">Multiple Pages</con:setting><con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="ReportTitle">Default Title</con:setting><con:setting id="21163bcc-d79b-43c4-b47b-e9a9e4465539fileName">Simple-Test-Suite</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:setupScript/><con:tearDownScript/><con:reportScript>import soapui.demo.subreport.SystemPropertiesSubReport
 
             if( !report.hasSubReport( "SystemProperties" ))
             {
             report.addSubReport( new SystemPropertiesSubReport( testSuite ))
-            }</con:reportScript>
-  <con:reportParameters/>
-</con:testSuite>
+            }</con:reportScript><con:reportParameters/></con:testSuite>

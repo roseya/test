@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface name="ServiceSoapBinding" bindingName="{http://www.soapui.org/sample/}ServiceSoapBinding" soapVersion="1_1" definition="WSDL-WADL/sample-service.wsdl" xsi:type="con:WsdlInterface" wsaVersion="NONE" id="ab875c18-0dc1-437d-a23d-8e8578216934" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:interface xsi:type="con:WsdlInterface" bindingName="{http://www.soapui.org/sample/}ServiceSoapBinding" definition="WSDL-WADL/sample-service.wsdl" id="ab875c18-0dc1-437d-a23d-8e8578216934" name="ServiceSoapBinding" soapVersion="1_1" wsaVersion="NONE" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:settings>
-    <con:setting id="ab875c18-0dc1-437d-a23d-8e8578216934fileName">ServiceSoapBinding</con:setting>
-  </con:settings>
-  <con:endpoints>
-    <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
-    <con:endpoint>http://www.soapui.org/sample</con:endpoint>
-  </con:endpoints>
-  <con:definitionCache rootPart="WSDL-WADL/sample-service.wsdl">
+    <con:setting id="ab875c18-0dc1-437d-a23d-8e8578216934fileName">ServiceSoapBinding</con:setting></con:settings><con:definitionCache rootPart="WSDL-WADL/sample-service.wsdl">
     <con:part>
-      <con:url>WSDL-WADL/sample-service.wsdl</con:url>
-      <con:content>
+      <con:url>WSDL-WADL/sample-service.wsdl</con:url><con:content>
         <wsdl:definitions name="sample" targetNamespace="http://www.soapui.org/sample/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.soapui.org/sample/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
           <wsdl:types>
             <xsd:schema targetNamespace="http://www.soapui.org/sample/">
@@ -162,8 +155,5 @@
             </wsdl:port>
           </wsdl:service>
         </wsdl:definitions>
-      </con:content>
-      <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
-    </con:part>
-  </con:definitionCache>
-</con:interface>
+      </con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints>
+    <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint><con:endpoint>http://www.soapui.org/sample</con:endpoint></con:endpoints></con:interface>

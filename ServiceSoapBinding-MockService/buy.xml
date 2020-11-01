@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:mockOperation name="buy" interface="ServiceSoapBinding" operation="buy" id="bdc87fc9-c4ec-4315-a0d1-723b0fafa0e8" xmlns:con="http://eviware.com/soapui/config">
+<con:mockOperation id="bdc87fc9-c4ec-4315-a0d1-723b0fafa0e8" interface="ServiceSoapBinding" name="buy" operation="buy" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="bdc87fc9-c4ec-4315-a0d1-723b0fafa0e8fileName">buy</con:setting>
-  </con:settings>
-  <con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+    <con:setting id="bdc87fc9-c4ec-4315-a0d1-723b0fafa0e8fileName">buy</con:setting></con:settings><con:defaultResponse>Buy Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchConfig/><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
                 def holder = groovyUtils.getXmlHolder( mockRequest.requestContent )
 
                 def sessionid = holder.getNodeValue( "//sessionid" )
@@ -30,14 +28,8 @@
                 return "Unknown Response"
 
 
-                return "Search Response"</con:dispatchPath>
-  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
-  <con:defaultResponse>Buy Response</con:defaultResponse>
-  <con:dispatchXPath/>
-  <con:routeScript/>
-  <con:response name="Buy Response" encoding="UTF-8" httpResponseStatus="200" id="7950c48f-9e80-4d53-abe0-7632784fa210" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+                return "Search Response"</con:dispatchPath><con:dispatchXPath/><con:routeScript/><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="7950c48f-9e80-4d53-abe0-7632784fa210" name="Buy Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -50,12 +42,8 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="Item 1 Response" encoding="UTF-8" httpResponseStatus="200" id="d439f5d8-e20e-4c1a-9c36-b34688f0f440" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="d439f5d8-e20e-4c1a-9c36-b34688f0f440" name="Item 1 Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -68,12 +56,8 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="Item 2 Response" encoding="UTF-8" httpResponseStatus="200" id="93caf12c-92e4-4a73-bcb2-27c28b186a6c" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="93caf12c-92e4-4a73-bcb2-27c28b186a6c" name="Item 2 Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -86,12 +70,8 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="Item 3 Response" encoding="UTF-8" httpResponseStatus="200" id="03d8b85a-df55-48fb-aa1f-9c76b143ef99" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="03d8b85a-df55-48fb-aa1f-9c76b143ef99" name="Item 3 Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -104,12 +84,8 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="Item 4 Response" encoding="UTF-8" httpResponseStatus="200" id="a4b22abf-e72a-49c9-83f7-34fc15b91a2a" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="a4b22abf-e72a-49c9-83f7-34fc15b91a2a" name="Item 4 Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -122,12 +98,8 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="Item 5 Response" encoding="UTF-8" httpResponseStatus="200" id="5d24d609-fecf-4bdd-baee-6721936038ac" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="5d24d609-fecf-4bdd-baee-6721936038ac" name="Item 5 Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -140,24 +112,16 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="Invalid Session Id Fault" encoding="UTF-8" httpResponseStatus="200" id="2a27bac0-cc06-499e-b83b-0c06a1ffbf98" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="2a27bac0-cc06-499e-b83b-0c06a1ffbf98" name="Invalid Session Id Fault">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
  <soapenv:Body>
  <soapenv:Fault>
  <faultcode>Client</faultcode>
  <faultstring>Invalid Session Id</faultstring>
  </soapenv:Fault>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="Unknown Response" encoding="UTF-8" httpResponseStatus="200" id="3feba58b-9739-4b28-8c21-46e21f0708b3" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="3feba58b-9739-4b28-8c21-46e21f0708b3" name="Unknown Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -170,12 +134,8 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:response name="WildCard Response" encoding="UTF-8" httpResponseStatus="200" id="c3f99ade-098d-4596-acb6-8af588c51b6b" dataSource="">
-    <con:settings/>
-    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="c3f99ade-098d-4596-acb6-8af588c51b6b" name="WildCard Response">
+    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:buyResponse>
@@ -208,8 +168,4 @@
  </sam:buyResponseContent>
  </sam:buyResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent>
-    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
-  </con:response>
-  <con:dispatchConfig/>
-</con:mockOperation>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response></con:mockOperation>

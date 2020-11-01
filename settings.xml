@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project name="SOAP Sample Project" soapui-version="6.0.0" resourceRoot="" id="3e963cc3-e8e6-46e8-b75b-502a9299ce11" abortOnError="false" runType="SEQUENTIAL" activeEnvironment="Default environment" encryptionMode="Not encrypted" compositeProjectFormat="1.3" updated="3.4.5" xmlns:con="http://eviware.com/soapui/config">
-  <con:description>Contains various tests that work with a local virtual service. See test case descriptions for details.</con:description>
-  <con:settings>
-    <con:setting id="IncludeOverview">true</con:setting>
-    <con:setting id="IncludeResults">true</con:setting>
-    <con:setting id="FlowLayout">false</con:setting>
-    <con:setting id="ErrorDetails">true</con:setting>
-    <con:setting id="IncludeCoverage">true</con:setting>
-    <con:setting id="GeneratableJUnitReport@Style">Multiple Pages</con:setting>
-    <con:setting id="GeneratableJUnitReport@Folder">C:\dev\htmlreports</con:setting>
-    <con:setting id="ReportTitle">SoapUI Report</con:setting>
-    <con:setting id="3e963cc3-e8e6-46e8-b75b-502a9299ce11fileName">SOAP-Sample-Project</con:setting>
-  </con:settings>
-  <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:requirements/>
-  <con:properties>
+<con:soapui-project abortOnError="false" activeEnvironment="Default environment" compositeProjectFormat="1.3" encryptionMode="Not encrypted" id="3e963cc3-e8e6-46e8-b75b-502a9299ce11" name="SOAP Sample Project" resourceRoot="" runType="SEQUENTIAL" updated="3.4.5" xmlns:con="http://eviware.com/soapui/config">
+  <con:description>Contains various tests that work with a local virtual service. See test case descriptions for details.</con:description><con:settings>
+    <con:setting id="IncludeOverview">true</con:setting><con:setting id="IncludeResults">true</con:setting><con:setting id="FlowLayout">false</con:setting><con:setting id="ErrorDetails">true</con:setting><con:setting id="IncludeCoverage">true</con:setting><con:setting id="GeneratableJUnitReport@Style">Multiple Pages</con:setting><con:setting id="GeneratableJUnitReport@Folder">C:\dev\htmlreports</con:setting><con:setting id="ReportTitle">SoapUI Report</con:setting><con:setting id="3e963cc3-e8e6-46e8-b75b-502a9299ce11fileName">SOAP-Sample-Project</con:setting></con:settings><con:savedRecentRuns>1</con:savedRecentRuns><con:requirements/><con:properties>
     <con:property>
-      <con:name>Some Property</con:name>
-      <con:value>with a value</con:value>
-    </con:property>
-  </con:properties>
-  <con:wssContainer/>
-  <con:databaseConnectionContainer/>
-  <con:jmsConnectionContainer/>
-  <con:oAuth2ProfileContainer/>
-  <con:oAuth1ProfileContainer/>
-  <con:sensitiveInformation/>
-  <con:authRepository/>
-  <con:tags/>
-</con:soapui-project>
+      <con:name>Some Property</con:name><con:value>with a value</con:value></con:property></con:properties><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/><con:authRepository/><con:tags/></con:soapui-project>
