@@ -3,17 +3,15 @@
   <con:settings>
     <con:setting id="ff7ad096-fa76-4628-9111-e896af49f461fileName">TestCase-1</con:setting>
   </con:settings>
+  <con:testStep id="e27d6bbe-cfea-4376-9d0e-15ebb5b70548" name="Groovy Script 3" type="groovy">
+    <con:settings/>
+    <con:config><script>3 -2 </script></con:config>
+  </con:testStep>
   <con:testStep id="82cac77c-52a8-40ad-bb1e-f51e989ba647" name="Groovy Script" type="groovy">
     <con:settings/>
     <con:config>
       <script>testing vm 4
 local 6</script>
-    </con:config>
-  </con:testStep>
-  <con:testStep id="e27d6bbe-cfea-4376-9d0e-15ebb5b70548" name="Groovy Script 3" type="groovy">
-    <con:settings/>
-    <con:config>
-      <script>3</script>
     </con:config>
   </con:testStep>
   <con:testStep id="d3820324-3bf4-4527-901d-89ecaf4c71cf" name="Groovy Script 2" type="groovy">
@@ -34,4 +32,4 @@ local 6</script>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
-</con:testCase>
+<con:breakPoints><con:testStepId>e27d6bbe-cfea-4376-9d0e-15ebb5b70548</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
