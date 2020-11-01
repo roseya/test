@@ -12,6 +12,6 @@ local 6</script>
     </con:config></con:testStep><con:testStep id="e27d6bbe-cfea-4376-9d0e-15ebb5b70548" name="Groovy Script 3 2" type="groovy">
     <con:settings/><con:config>
       <script>3 - 3</script>
-    </con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints>
+    </con:config></con:testStep><con:testStep type="groovy" name="Groovy Script 4" id="ba25d862-88f0-4087-bde7-4385601e04ef"><con:settings/><con:config><script/></con:config></con:testStep><con:properties/><con:reportParameters/><con:breakPoints>
     <con:testStepId>82cac77c-52a8-40ad-bb1e-f51e989ba647</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints>
     <con:testStepId>82cac77c-52a8-40ad-bb1e-f51e989ba647</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints><con:breakPoints><con:testStepId>d3820324-3bf4-4527-901d-89ecaf4c71cf</con:testStepId><con:status>NONE</con:status><con:properties/></con:breakPoints></con:testCase>
