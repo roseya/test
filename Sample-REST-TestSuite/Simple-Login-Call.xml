@@ -91,6 +91,12 @@ NOTE: If you would like to run the Login step without as a standalone step pleas
       <action>stop</action>
     </con:config>
   </con:testStep>
+  <con:testStep type="groovy" name="Groovy Script" id="ca0b35ef-f27f-45b0-90b0-028042ac5cb3">
+    <con:settings/>
+    <con:config>
+      <script/>
+    </con:config>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
