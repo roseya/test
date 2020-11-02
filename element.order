@@ -3,4 +3,5 @@ Simple-Test-Suite
 Test-Suite-fails-if-we-don%27t-get-faults
 Expanded-Test-Suite
 TestSuite-1
+TestSuite-2
 ServiceSoapBinding-MockService
