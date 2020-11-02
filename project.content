@@ -14,6 +14,7 @@ Expanded-Test-Suite\XML-DataSource.xml
 Expanded-Test-Suite\Groovy-DataSource.xml
 Expanded-Test-Suite\More-Than-Less-Than-TestCase.xml
 TestSuite-1\TestCase-1.xml
+TestSuite-2\TestCase-1.xml
 LoadTest---Burst-Strategy.xml
 LoadTest---Simple-Strategy.xml
 LoadTest---Thread-Strategy.xml
