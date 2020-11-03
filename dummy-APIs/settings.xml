@@ -3,7 +3,7 @@
   <con:settings>
     <con:setting id="cb993511-4363-4c65-b6df-821914d1745cfileName">dummy-APIs</con:setting>
   </con:settings>
-  <con:definitionCache/>
+  <con:definitionCache type="TEXT"/>
   <con:endpoints>
     <con:endpoint>http://dummy.restapiexample.com</con:endpoint>
   </con:endpoints>
