@@ -5,9 +5,7 @@
   </con:settings>
   <con:testStep type="groovy" name="Groovy Script" id="e9fdaebf-65be-4f2f-a184-7d7b97326e7e">
     <con:settings/>
-    <con:config>
-      <script>vm1</script>
-    </con:config>
+    <con:config><script>vm3</script></con:config>
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
