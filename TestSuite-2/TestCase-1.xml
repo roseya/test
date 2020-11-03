@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" id="ef105c65-94c2-4bef-972b-7d444bbb445c" keepSession="false" name="TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="ef105c65-94c2-4bef-972b-7d444bbb445cfileName">TestCase-1</con:setting></con:settings><con:testStep id="f1f44b43-ca25-4fe8-b3b1-5ffcdeda6c52" name="Groovy Script" type="groovy">
-    <con:settings/><con:config><script>vm 1</script></con:config></con:testStep><con:testStep id="a0933456-a105-4988-bd43-2bf1871c9931" name="SOAP Request" type="request"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServiceSoapBinding</con:interface><con:operation>buy</con:operation><con:request id="8af50059-5292-4464-bc56-4515ded1adfd" name="SOAP Request"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">\r
+    <con:setting id="ef105c65-94c2-4bef-972b-7d444bbb445cfileName">TestCase-1</con:setting>
+  </con:settings>
+  <con:testStep id="f1f44b43-ca25-4fe8-b3b1-5ffcdeda6c52" name="Groovy Script" type="groovy">
+    <con:settings/>
+    <con:config>
+      <script>vm 1</script>
+    </con:config>
+  </con:testStep>
+  <con:testStep id="a0933456-a105-4988-bd43-2bf1871c9931" name="SOAP Request" type="request">
+    <con:settings/>
+    <con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:interface>ServiceSoapBinding</con:interface>
+      <con:operation>buy</con:operation>
+      <con:request id="8af50059-5292-4464-bc56-4515ded1adfd" name="SOAP Request">
+        <con:settings/>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://127.0.0.1:8082/mockServiceSoapBinding</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
       <sam:buy>\r
@@ -10,4 +26,32 @@
          <buystring>?</buystring>\r
       </sam:buy>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:assertion id="e2456133-1886-4458-af5d-84545ca67466" name="Valid HTTP Status Codes" type="Valid HTTP Status Codes"><con:settings/><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion id="9911ec28-8f85-481d-9d9b-4758b8782725" name="Response SLA" type="Response SLA Assertion"><con:configuration><SLA>200</SLA></con:configuration></con:assertion><con:assertion id="d724545a-708a-4232-a98a-2b34f5258560" name="Not SOAP Fault" type="SOAP Fault Assertion"/><con:assertion id="fdc5323c-4c84-4d95-9985-d21501e17553" name="Schema Compliance" type="Schema Compliance"><con:configuration/></con:assertion><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="http://www.soapui.org/sample/buy" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+</soapenv:Envelope>]]></con:request>
+        <con:assertion id="e2456133-1886-4458-af5d-84545ca67466" name="Valid HTTP Status Codes" type="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion id="9911ec28-8f85-481d-9d9b-4758b8782725" name="Response SLA" type="Response SLA Assertion">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion id="d724545a-708a-4232-a98a-2b34f5258560" name="Not SOAP Fault" type="SOAP Fault Assertion"/>
+        <con:assertion id="fdc5323c-4c84-4d95-9985-d21501e17553" name="Schema Compliance" type="Schema Compliance">
+          <con:configuration/>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:wsaConfig action="http://www.soapui.org/sample/buy" mustUnderstand="NONE" version="200508"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:request>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

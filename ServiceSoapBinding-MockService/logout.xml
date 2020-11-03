@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:mockOperation id="1a26f431-4978-4c10-bfc9-fd7840210994" interface="ServiceSoapBinding" name="logout" operation="logout" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="1a26f431-4978-4c10-bfc9-fd7840210994fileName">logout</con:setting></con:settings><con:defaultResponse>Ok Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchConfig/><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+    <con:setting id="1a26f431-4978-4c10-bfc9-fd7840210994fileName">logout</con:setting>
+  </con:settings>
+  <con:defaultResponse>Ok Response</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
                 def holder = groovyUtils.getXmlHolder( mockRequest.requestContent )
 
                 def sessionid = holder.getNodeValue( "//sessionid" )
@@ -15,20 +20,31 @@
                 context.removeProperty( sessionid )
                 requestContext.sessioninfo = "OK"
 
-                return "Ok Response"</con:dispatchPath><con:dispatchXPath/><con:routeScript/><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="d5660ed9-8e30-4895-b1d2-46f51789e77c" name="Ok Response">
-    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+                return "Ok Response"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="d5660ed9-8e30-4895-b1d2-46f51789e77c" name="Ok Response">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:logoutResponse>
  <sessioninfo>${sessioninfo}</sessioninfo>
  </sam:logoutResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="366ad8cc-6a7e-4ffb-ac74-8e610db26f74" name="Invalid Session Id Fault">
-    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="366ad8cc-6a7e-4ffb-ac74-8e610db26f74" name="Invalid Session Id Fault">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
  <soapenv:Body>
  <soapenv:Fault>
  <faultcode>Client</faultcode>
  <faultstring>Invalid Session Id</faultstring>
  </soapenv:Fault>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response></con:mockOperation>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+</con:mockOperation>

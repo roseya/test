@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:mockOperation id="9482129a-e9a7-4fc0-a4b6-6237963aaf97" interface="ServiceSoapBinding" name="login" operation="login" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="9482129a-e9a7-4fc0-a4b6-6237963aaf97fileName">login</con:setting></con:settings><con:defaultResponse>Ok Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchConfig/><con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
+    <con:setting id="9482129a-e9a7-4fc0-a4b6-6237963aaf97fileName">login</con:setting>
+  </con:settings>
+  <con:defaultResponse>Ok Response</con:defaultResponse>
+  <con:dispatchStyle>SCRIPT</con:dispatchStyle>
+  <con:dispatchConfig/>
+  <con:dispatchPath>def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )
                 def holder = groovyUtils.getXmlHolder( mockRequest.requestContent )
 
                 def username = holder.getNodeValue( "//username" )
@@ -23,16 +28,24 @@
                 context.setProperty( sessionid, sum )
 
                 requestContext.sessionid = sessionid
-                return "Ok Response"</con:dispatchPath><con:dispatchXPath/><con:routeScript/><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="25e19ac5-b249-45c9-ad04-2a1ce42674af" name="Ok Response">
-    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+                return "Ok Response"</con:dispatchPath>
+  <con:dispatchXPath/>
+  <con:routeScript/>
+  <con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="25e19ac5-b249-45c9-ad04-2a1ce42674af" name="Ok Response">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Header/>
  <soapenv:Body>
  <sam:loginResponse>
  <sessionid>${sessionid}</sessionid>
  </sam:loginResponse>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="3987d410-34fb-4d32-a681-944e3e57b686" name="Invalid Login Fault">
-    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="3987d410-34fb-4d32-a681-944e3e57b686" name="Invalid Login Fault">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Body>
  <soapenv:Fault>
  <faultcode>Client</faultcode>
@@ -42,8 +55,12 @@
  </detail>
  </soapenv:Fault>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="a613c941-bf43-4c53-8bea-ef3cdcb5d150" name="Already Logged In Fault">
-    <con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+  <con:response dataSource="" encoding="UTF-8" httpResponseStatus="200" id="a613c941-bf43-4c53-8bea-ef3cdcb5d150" name="Already Logged In Fault">
+    <con:settings/>
+    <con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sam="http://www.soapui.org/sample/">
  <soapenv:Body>
  <soapenv:Fault>
  <faultcode>Client</faultcode>
@@ -53,4 +70,7 @@
  </detail>
  </soapenv:Fault>
  </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response></con:mockOperation>
+</soapenv:Envelope>]]></con:responseContent>
+    <con:wsaConfig mustUnderstand="NONE" version="200508"/>
+  </con:response>
+</con:mockOperation>

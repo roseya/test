@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:operation action="http://www.soapui.org/sample/buy" bindingOperationName="buy" id="5c6be0c3-52a9-4e8f-85fa-f139f07f910a" inputName="" isOneWay="false" name="buy" receivesAttachments="false" sendsAttachments="false" type="Request-Response" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:operation action="http://www.soapui.org/sample/buy" bindingOperationName="buy" id="5c6be0c3-52a9-4e8f-85fa-f139f07f910a" inputName="" isOneWay="false" name="buy" receivesAttachments="false" sendsAttachments="false" type="Request-Response" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="5c6be0c3-52a9-4e8f-85fa-f139f07f910afileName">buy</con:setting>
   </con:settings>

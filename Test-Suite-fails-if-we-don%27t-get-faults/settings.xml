@@ -6,5 +6,11 @@
             wrong ones.
 
             One of the strengths of ReadyAPI Test is the ability do quickly create a number of destructive tests, that confirms
-            that the your Web Service handles input errors, abuse, input faults etc. correctly.</con:description><con:settings>
-    <con:setting id="479e431d-7b4f-460b-b98c-fc5ccd90c893fileName">Test-Suite-fails-if-we-don%27t-get-faults</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>
+            that the your Web Service handles input errors, abuse, input faults etc. correctly.</con:description>
+  <con:settings>
+    <con:setting id="479e431d-7b4f-460b-b98c-fc5ccd90c893fileName">Test-Suite-fails-if-we-don%27t-get-faults</con:setting>
+  </con:settings>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

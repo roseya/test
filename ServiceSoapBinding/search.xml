@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:operation action="http://www.soapui.org/sample/search" bindingOperationName="search" id="faec375e-8b92-40e4-a160-da0fc5ef6eac" inputName="" isOneWay="false" name="search" receivesAttachments="false" sendsAttachments="false" type="Request-Response" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:operation action="http://www.soapui.org/sample/search" bindingOperationName="search" id="faec375e-8b92-40e4-a160-da0fc5ef6eac" inputName="" isOneWay="false" name="search" receivesAttachments="false" sendsAttachments="false" type="Request-Response" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="faec375e-8b92-40e4-a160-da0fc5ef6eacfileName">search</con:setting>
   </con:settings>
