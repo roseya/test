@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:soapui-project abortOnError="false" activeEnvironment="Default environment" compositeProjectFormat="1.3" created="3.4.5" disableCarriageReturnEscaping="false" encryptionMode="Not encrypted" id="8dabfeac-fd0f-4b54-b518-81c99da4aaad" name="REST Project 1" resourceRoot="" runType="SEQUENTIAL" updated="3.4.5" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="8dabfeac-fd0f-4b54-b518-81c99da4aaadfileName">REST-Project-1</con:setting>
-  </con:settings>
-  <con:properties/>
-  <con:wssContainer/>
-  <con:databaseConnectionContainer/>
-  <con:jmsConnectionContainer/>
-  <con:oAuth2ProfileContainer/>
-  <con:oAuth1ProfileContainer/>
-  <con:eventHandlers name="RequestFilter.filterRequest" type="RequestFilter.filterRequest">
+    <con:setting id="8dabfeac-fd0f-4b54-b518-81c99da4aaadfileName">REST-Project-1</con:setting></con:settings><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:eventHandlers name="RequestFilter.filterRequest" type="RequestFilter.filterRequest">
     <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
 // This code is often used for adding custom authentication to ReadyAPI functional tests
 
@@ -24,9 +16,7 @@
 // if (headers.containsKey('auth_token2') == false) {
 //   headers.put('auth_token2', token)
 //   request.requestHeaders = headers
-// }</con:script>
-  </con:eventHandlers>
-  <con:eventHandlers name="TestRunListener.afterStep" type="TestRunListener.afterStep">
+// }</con:script></con:eventHandlers><con:eventHandlers name="TestRunListener.afterStep" type="TestRunListener.afterStep">
     <con:script>// Save all test step results into files
 // Change the directory path in line 5 to a location where you want to store details
 // then uncomment lines 5 to 10
@@ -36,8 +26,4 @@
 // pw = new java.io.PrintWriter(fos)
 // testStepResult.writeTo(pw)
 // pw.close()
-// fos.close()</con:script>
-  </con:eventHandlers>
-  <con:authRepository/>
-  <con:tags/>
-</con:soapui-project>
+// fos.close()</con:script></con:eventHandlers><con:authRepository/><con:tags/></con:soapui-project>
