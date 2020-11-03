@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<con:testCase discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" id="ca8623b1-d59e-4699-a368-9d9f8e260db4" keepSession="false" name="New Test 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
-  <con:settings>
-    <con:setting id="ca8623b1-d59e-4699-a368-9d9f8e260db4fileName">New-Test-1</con:setting></con:settings><con:testStep id="e9fdaebf-65be-4f2f-a184-7d7b97326e7e" name="Groovy Script" type="groovy">
-    <con:settings/><con:config><script>vm3</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>

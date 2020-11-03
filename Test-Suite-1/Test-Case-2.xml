@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<con:testCase discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" id="b7a7c238-ae7f-469e-92c1-e92fa5711613" keepSession="false" name="Test Case 2" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="b7a7c238-ae7f-469e-92c1-e92fa5711613fileName">Test-Case-2</con:setting></con:settings><con:properties/><con:reportParameters/></con:testCase>
