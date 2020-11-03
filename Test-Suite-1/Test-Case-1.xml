@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="83240ec6-9a90-46ad-a11c-80496d3d8414" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="http://dummy.restapiexample.com TestCase 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="83240ec6-9a90-46ad-a11c-80496d3d8414" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Test Case 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="83240ec6-9a90-46ad-a11c-80496d3d8414fileName">http%3A%2F%2Fdummy.restapiexample.com-TestCase-1</con:setting>
+    <con:setting id="83240ec6-9a90-46ad-a11c-80496d3d8414fileName">Test-Case-1</con:setting>
   </con:settings>
   <con:testStep type="restrequest" name="Request 1" id="1e88b65b-b59d-4b4c-86bf-16b55f7a5b03">
     <con:settings/>
