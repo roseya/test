@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:WsdlInterface" bindingName="{http://www.soapui.org/sample/}ServiceSoapBinding" definition="WSDL-WADL/sample-service.wsdl" id="ab875c18-0dc1-437d-a23d-8e8578216934" name="ServiceSoapBinding" soapVersion="1_1" wsaVersion="NONE" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:interface xsi:type="con:WsdlInterface" bindingName="{http://www.soapui.org/sample/}ServiceSoapBinding" definition="WSDL-WADL/sample-service.wsdl" id="ab875c18-0dc1-437d-a23d-8e8578216934" name="ServiceSoapBinding" soapVersion="1_1" wsaVersion="NONE" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="ab875c18-0dc1-437d-a23d-8e8578216934fileName">ServiceSoapBinding</con:setting></con:settings><con:definitionCache rootPart="WSDL-WADL/sample-service.wsdl">
     <con:part>
