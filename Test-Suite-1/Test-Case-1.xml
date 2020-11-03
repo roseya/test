@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <con:testCase discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" id="83240ec6-9a90-46ad-a11c-80496d3d8414" keepSession="false" name="Test Case 1" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="83240ec6-9a90-46ad-a11c-80496d3d8414fileName">Test-Case-1</con:setting></con:settings><con:testStep id="1e88b65b-b59d-4b4c-86bf-16b55f7a5b03" name="Request 1" type="restrequest">
-    <con:settings/><con:config xsi:type="con:RestRequestStep" methodName="Employees" resourcePath="/api/v1/employees" service="dummy APIs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:setting id="83240ec6-9a90-46ad-a11c-80496d3d8414fileName">Test-Case-1</con:setting>
+  </con:settings>
+  <con:testStep id="1e88b65b-b59d-4b4c-86bf-16b55f7a5b03" name="Request 1" type="restrequest">
+    <con:settings/>
+    <con:config xsi:type="con:RestRequestStep" methodName="Employees" resourcePath="/api/v1/employees" service="dummy APIs" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest id="48e7c6e3-7dd4-4fec-8983-92deaa8f5db9" mediaType="application/json" name="Request 1">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://dummy.restapiexample.com</con:endpoint><con:request/><con:originalUri>http://dummy.restapiexample.com/api/v1/employees</con:originalUri><con:assertion id="c609abbb-dca0-4e41-b5ce-df128414d336" name="Valid HTTP Status Codes" type="Valid HTTP Status Codes">
-          <con:settings/><con:configuration>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://dummy.restapiexample.com</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://dummy.restapiexample.com/api/v1/employees</con:originalUri>
+        <con:assertion id="c609abbb-dca0-4e41-b5ce-df128414d336" name="Valid HTTP Status Codes" type="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
             <codes>200</codes>
-          </con:configuration></con:assertion><con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
