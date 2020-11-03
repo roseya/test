@@ -28,6 +28,6 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:properties/>
+  <con:testStep type="groovy" name="Groovy Script" id="2fbf64af-aa5c-4f98-b8dd-bbd853e3eadb"><con:settings/><con:config><script/></con:config></con:testStep><con:properties/>
   <con:reportParameters/>
 </con:testCase>
