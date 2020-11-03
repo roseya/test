@@ -9,4 +9,4 @@
           <con:settings/><con:configuration>
             <codes>200</codes>
           </con:configuration></con:assertion><con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep id="2fbf64af-aa5c-4f98-b8dd-bbd853e3eadb" name="Groovy Script" type="groovy"><con:settings/><con:config><script>vm3</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep id="2fbf64af-aa5c-4f98-b8dd-bbd853e3eadb" name="Groovy Script" type="groovy"><con:settings/><con:config><script>vm3-3</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
