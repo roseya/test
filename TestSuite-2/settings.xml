@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="903d58f4-1aee-4066-91c0-46eee79bc294" name="TestSuite 2" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="903d58f4-1aee-4066-91c0-46eee79bc294fileName">TestSuite-2</con:setting></con:settings><con:runType>SEQUENTIAL</con:runType><con:properties/><con:reportParameters/></con:testSuite>
