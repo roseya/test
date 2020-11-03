@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource id="7872249d-867c-49f0-a766-027c2670d981" name="Employees" path="/api/v1/employees" xmlns:con="http://eviware.com/soapui/config">
+<con:resource id="7872249d-867c-49f0-a766-027c2670d981" name="Employees" path="/api/v1/employees" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="7872249d-867c-49f0-a766-027c2670d981fileName">Employees</con:setting>
   </con:settings>
